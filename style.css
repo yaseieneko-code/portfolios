@@ -260,87 +260,102 @@ body::after {
 /* ============================================================
    Awards
    ============================================================ */
+/* Certificate-style awards: dark wooden background, gold frame, gold text */
 .awards-frame {
     position: relative;
-    padding: 0 28px;
-    background:
-        linear-gradient(160deg,
-            rgba(220,203,168,0.30) 0%,
-            rgba(244,235,217,0.55) 40%,
-            rgba(244,235,217,0.55) 60%,
-            rgba(220,203,168,0.30) 100%);
-    border: 1px solid var(--gold);
+    padding: 0 36px;
+    background-color: #3A2414;
+    background-image:
+        /* Subtle wood grain */
+        repeating-linear-gradient(
+            90deg,
+            rgba(0,0,0,0.18) 0px,
+            transparent 1px,
+            transparent 3px,
+            rgba(0,0,0,0.10) 4px,
+            transparent 5px,
+            transparent 12px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 60px,
+            rgba(255,220,150,0.04) 60px,
+            rgba(255,220,150,0.04) 64px
+        ),
+        radial-gradient(ellipse at 30% 20%, rgba(120,75,40,0.5) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 80%, rgba(60,30,15,0.5) 0%, transparent 60%),
+        linear-gradient(160deg, #4A2D18 0%, #2E1A0E 50%, #4A2D18 100%);
+    border: 2px solid var(--gold-light);
     box-shadow:
-        0 0 0 1px rgba(168,138,58,0.18),
-        0 0 0 6px var(--cream),
-        0 0 0 7px rgba(168,138,58,0.35),
-        0 14px 40px rgba(74,50,32,0.18),
-        inset 0 0 60px rgba(168,138,58,0.06);
+        /* Outer gold frame layers — like a picture frame */
+        0 0 0 1px rgba(217,184,100,0.4),
+        0 0 0 7px #2E1A0E,
+        0 0 0 8px var(--gold-light),
+        0 0 0 10px rgba(217,184,100,0.6),
+        0 0 0 13px #2E1A0E,
+        0 0 0 14px rgba(217,184,100,0.4),
+        /* Drop shadow */
+        0 18px 50px rgba(43,27,16,0.45),
+        /* Inner glow */
+        inset 0 0 80px rgba(0,0,0,0.55),
+        inset 0 0 40px rgba(217,184,100,0.06);
 }
 
-.awards-ornament { width: 100%; display: block; }
+/* Inner gold border line */
+.awards-frame::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(217,184,100,0.5);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.awards-ornament { width: 100%; display: block; position: relative; z-index: 2; }
 .awards-ornament-top    { margin-top: -1px; }
 .awards-ornament-bottom { margin-bottom: -1px; transform: scaleY(-1); }
 
 .awards-body {
-    padding: 18px 16px 22px;
+    padding: 26px 18px 32px;
+    position: relative;
+    z-index: 2;
 }
 
 .award-entry {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 28px;
-    padding: 18px 24px;
-}
-
-.award-detail {
-    text-align: left;
-    flex: 1;
+    text-align: center;
+    padding: 22px 16px;
 }
 
 .award-name {
     font-family: 'Shippori Mincho', serif;
-    font-size: clamp(0.95rem, 2.2vw, 1.18rem);
+    font-size: clamp(1rem, 2.4vw, 1.3rem);
     font-weight: 600;
-    color: var(--ink);
-    letter-spacing: 0.08em;
-    margin-bottom: 4px;
+    color: var(--gold-light);
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+    text-shadow:
+        0 0 8px rgba(217,184,100,0.3),
+        1px 1px 2px rgba(0,0,0,0.6);
 }
 
 .award-result {
     font-family: 'Cinzel', serif;
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     font-weight: 500;
-    color: var(--oxblood);
-    letter-spacing: 0.6em;
-    text-indent: 0.6em;
+    color: #E5C875;
+    letter-spacing: 0.7em;
+    text-indent: 0.7em;
     text-transform: uppercase;
-}
-
-.award-seal {
-    width: 50px;
-    height: 50px;
-    flex-shrink: 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
 }
 
 .award-divider {
     display: flex;
     justify-content: center;
-    padding: 4px 0;
+    padding: 6px 0;
 }
 .award-divider svg { width: 100%; max-width: 380px; }
-
-@media (max-width: 600px) {
-    .award-entry {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 14px 12px;
-        text-align: center;
-    }
-    .award-seal { margin: 0 auto; }
-    .award-detail { text-align: center; }
-}
 
 /* ============================================================
    Links
