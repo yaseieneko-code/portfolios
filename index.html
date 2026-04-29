@@ -16,6 +16,104 @@
 
     <!-- Custom CSS / Tailwind config -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Critical inline styles (override Tailwind preflight reliably) -->
+    <style>
+        html, body {
+            min-height: 100vh !important;
+        }
+        body {
+            background-color: #f5e8c8 !important;
+            background-image:
+                radial-gradient(ellipse at 20% 10%, rgba(180,140,80,0.12), transparent 50%),
+                radial-gradient(ellipse at 80% 90%, rgba(160,120,60,0.14), transparent 55%),
+                radial-gradient(circle at 50% 50%, rgba(245,232,200,1) 0%, rgba(232,215,175,1) 100%) !important;
+            background-attachment: fixed !important;
+        }
+        .oak-frame {
+            border-radius: 4px !important;
+            background-color: #6d4520 !important;
+            background-image:
+                repeating-linear-gradient(90deg,
+                    rgba(74,47,22,0.20) 0px,
+                    rgba(110,75,38,0.06) 1px,
+                    rgba(74,47,22,0.22) 2px,
+                    rgba(140,95,50,0.04) 4px,
+                    rgba(74,47,22,0.16) 7px),
+                repeating-linear-gradient(88deg,
+                    rgba(60,38,18,0.12) 0px,
+                    rgba(120,80,42,0.02) 14px,
+                    rgba(60,38,18,0.14) 28px),
+                radial-gradient(ellipse at 18% 30%, rgba(50,30,14,0.55), transparent 35%),
+                radial-gradient(ellipse at 78% 70%, rgba(50,30,14,0.45), transparent 40%),
+                linear-gradient(180deg, #8b5a2b 0%, #6d4520 50%, #4a2f16 100%) !important;
+            box-shadow:
+                inset 0 0 0 2px rgba(40,24,8,0.6),
+                inset 0 0 0 6px rgba(180,140,80,0.25),
+                inset 0 0 22px rgba(20,10,0,0.55),
+                0 8px 28px rgba(40,22,8,0.35) !important;
+        }
+        .parchment-bg {
+            background-image:
+                radial-gradient(ellipse at 20% 10%, rgba(180,140,80,0.10), transparent 50%),
+                radial-gradient(ellipse at 80% 90%, rgba(160,120,60,0.12), transparent 55%),
+                radial-gradient(circle at 50% 50%, rgba(252,244,220,1) 0%, rgba(238,222,188,1) 100%) !important;
+            box-shadow: inset 0 0 40px rgba(120,80,30,0.25) !important;
+        }
+        .shelf-bg {
+            background: linear-gradient(180deg,
+                rgba(50,30,15,0.55) 0%,
+                rgba(80,50,25,0.35) 50%,
+                rgba(50,30,15,0.55) 100%) !important;
+            box-shadow: inset 0 0 60px rgba(0,0,0,0.6) !important;
+        }
+        .shelf-board {
+            background-image:
+                repeating-linear-gradient(90deg,
+                    rgba(74,47,22,0.20) 0px,
+                    rgba(110,75,38,0.06) 1px,
+                    rgba(74,47,22,0.22) 2px,
+                    rgba(140,95,50,0.04) 4px,
+                    rgba(74,47,22,0.16) 7px),
+                linear-gradient(180deg, #8b5a2b 0%, #6d4520 50%, #4a2f16 100%) !important;
+            box-shadow:
+                0 4px 12px rgba(0,0,0,0.6),
+                inset 0 -2px 4px rgba(0,0,0,0.5),
+                inset 0 1px 1px rgba(255,220,160,0.2) !important;
+        }
+        .corner-deco {
+            position: absolute;
+            background: radial-gradient(circle at 30% 30%, #f5d98a, #8b6914 70%) !important;
+            border: 1.5px solid #4a2f16 !important;
+            border-radius: 50% !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.5), inset 0 -2px 4px rgba(0,0,0,0.4) !important;
+            z-index: 5;
+        }
+        .author-name-grad {
+            font-family: 'Yuji Syuku', 'Shippori Mincho', serif !important;
+            background: linear-gradient(180deg, #6b3f1a 0%, #4a2811 45%, #2a1608 80%, #5a3216 100%) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            color: transparent !important;
+            text-shadow: 0 1px 0 rgba(255,230,180,0.35) !important;
+            filter: drop-shadow(0 2px 3px rgba(40,20,8,0.45));
+        }
+        .nouveau-text {
+            background: linear-gradient(180deg, #f5d98a 0%, #c9a14a 45%, #8b6914 75%, #d9b366 100%) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            color: transparent !important;
+            text-shadow: 0 1px 0 rgba(255,240,200,0.4) !important;
+        }
+        .award-inner-bg {
+            background: radial-gradient(ellipse at center, rgba(252,244,220,0.95) 0%, rgba(238,222,188,0.85) 100%) !important;
+        }
+        .caption-bg {
+            background: linear-gradient(180deg, rgba(252,244,220,0.95), rgba(238,222,188,0.92)) !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+        }
+    </style>
+
     <script>
       tailwind.config = {
         theme: {
