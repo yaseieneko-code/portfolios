@@ -1,633 +1,156 @@
 /* ============================================================
-   Variables — Refined British Antique Palette
+   Custom CSS — extends Tailwind utility classes
    ============================================================ */
-:root {
-    --cream:        #F4EBD9;
-    --cream-warm:   #ECE0C7;
-    --cream-deep:   #DCCBA8;
-    --parchment:    #E8DBBE;
-    --oxblood:      #5C2018;
-    --oxblood-deep: #3E1612;
-    --burgundy:     #6E2C2C;
-    --walnut:       #4A3220;
-    --walnut-dark:  #2B1B10;
-    --walnut-light: #6B4F35;
-    --gold:         #A88A3A;
-    --gold-light:   #C9AC5E;
-    --gold-deep:    #7A6228;
-    --ink:          #2A1F14;
-    --ink-soft:     #4A3A28;
-    --ink-mute:     #7A6B5A;
-    --cat-black:    #1A1612;
-}
 
-/* ============================================================
-   Reset & Base
-   ============================================================ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
-body {
-    font-family: 'Cormorant Garamond', 'Shippori Mincho', Georgia, serif;
-    color: var(--ink);
-    background-color: var(--cream);
-    overflow-x: hidden;
-    position: relative;
+/* ----- Backgrounds ----- */
+.ivory-bg {
+    background-image:
+        radial-gradient(ellipse at 20% 10%, rgba(180,140,80,0.10), transparent 50%),
+        radial-gradient(ellipse at 80% 90%, rgba(160,120,60,0.12), transparent 55%),
+        radial-gradient(circle at 50% 50%, rgba(245,232,200,1) 0%, rgba(232,215,175,1) 100%);
     min-height: 100vh;
-    line-height: 1.6;
+}
 
-    /* Subtle damask-style background pattern */
+.parchment-bg {
     background-image:
-        radial-gradient(ellipse at 20% 10%, rgba(168,138,58,0.05) 0%, transparent 40%),
-        radial-gradient(ellipse at 80% 90%, rgba(92,32,24,0.04) 0%, transparent 45%),
-        radial-gradient(ellipse at 50% 50%, rgba(74,50,32,0.03) 0%, transparent 60%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%238B6F35' stroke-width='0.4' opacity='0.13'%3E%3Cpath d='M80,20 Q60,40 80,60 Q100,40 80,20Z'/%3E%3Cpath d='M80,100 Q60,120 80,140 Q100,120 80,100Z'/%3E%3Cpath d='M20,80 Q40,60 60,80 Q40,100 20,80Z'/%3E%3Cpath d='M100,80 Q120,60 140,80 Q120,100 100,80Z'/%3E%3Ccircle cx='80' cy='80' r='3' fill='%238B6F35' opacity='0.4'/%3E%3Cpath d='M70,70 Q80,65 90,70 Q85,80 90,90 Q80,85 70,90 Q75,80 70,70Z'/%3E%3C/g%3E%3C/svg%3E");
+        radial-gradient(ellipse at 20% 10%, rgba(180,140,80,0.10), transparent 50%),
+        radial-gradient(ellipse at 80% 90%, rgba(160,120,60,0.12), transparent 55%),
+        radial-gradient(circle at 50% 50%, rgba(252,244,220,1) 0%, rgba(238,222,188,1) 100%);
+    box-shadow: inset 0 0 40px rgba(120,80,30,0.25);
 }
 
-/* Aged paper grain */
-body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* Subtle vignette */
-body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: radial-gradient(ellipse at center, transparent 50%, rgba(74,50,32,0.18) 100%);
-    pointer-events: none;
-    z-index: 0;
-}
-
-.container {
-    max-width: 920px;
-    margin: 0 auto;
-    padding: 60px 32px 80px;
-    position: relative;
-    z-index: 1;
-}
-
-/* ============================================================
-   Corner Damask Ornaments
-   ============================================================ */
-.corner-ornament {
-    position: fixed;
-    width: 130px;
-    height: 130px;
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0.7;
-}
-.corner-ornament svg { width: 100%; height: 100%; }
-.corner-tl { top: 16px;    left: 16px; }
-.corner-tr { top: 16px;    right: 16px; }
-
-@media (max-width: 720px) {
-    .corner-ornament { width: 80px; height: 80px; }
-}
-
-/* ============================================================
-   Walking Cat
-   ============================================================ */
-.walking-cat {
-    position: fixed;
-    bottom: 18px;
-    left: -100px;
-    width: 70px;
-    z-index: 200;
-    pointer-events: none;
-    animation: catWalk 26s linear infinite;
-    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
-}
-
-@keyframes catWalk {
-    0%   { left: -100px; transform: scaleX(1); }
-    47%  { left: calc(100vw + 100px); transform: scaleX(1); }
-    50%  { left: calc(100vw + 100px); transform: scaleX(-1); }
-    97%  { left: -100px; transform: scaleX(-1); }
-    100% { left: -100px; transform: scaleX(1); }
-}
-
-.leg { transform-origin: 50% 0%; }
-.leg-fl { animation: legStep 0.4s ease-in-out infinite; }
-.leg-rr { animation: legStep 0.4s ease-in-out infinite 0.10s; }
-.leg-fr { animation: legStep 0.4s ease-in-out infinite 0.20s; }
-.leg-rl { animation: legStep 0.4s ease-in-out infinite 0.30s; }
-
-@keyframes legStep {
-    0%, 100% { transform: translateY(0); }
-    50%       { transform: translateY(-4px) rotate(6deg); }
-}
-
-/* ============================================================
-   HERO — Name at top, refined antique
-   ============================================================ */
-.hero {
-    text-align: center;
-    padding: 56px 40px 48px;
-    margin-bottom: 90px;
-    position: relative;
-
-    background:
-        linear-gradient(180deg,
-            rgba(244,235,217,0.0) 0%,
-            rgba(244,235,217,0.6) 30%,
-            rgba(244,235,217,0.6) 70%,
-            rgba(244,235,217,0.0) 100%);
-}
-
-/* Double frame top + bottom accents */
-.hero::before,
-.hero::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 280px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-}
-.hero::before { top: 0; }
-.hero::after  { bottom: 0; }
-
-.flourish {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-}
-.flourish svg {
-    width: 100%;
-    max-width: 460px;
-    height: auto;
-}
-.flourish-top    { margin-bottom: 22px; }
-.flourish-bottom { margin-top: 22px; }
-
-.author-name {
-    font-family: 'Shippori Mincho', serif;
-    font-size: clamp(2.4rem, 6vw, 3.8rem);
-    font-weight: 700;
-    letter-spacing: 0.32em;
-    color: var(--ink);
-    line-height: 1.2;
-    margin-bottom: 14px;
-    text-indent: 0.32em;
-    text-shadow: 1px 2px 4px rgba(74,50,32,0.15);
-}
-
-.author-name-en {
-    font-family: 'Cinzel', serif;
-    font-weight: 500;
-    font-size: clamp(0.7rem, 1.6vw, 0.92rem);
-    letter-spacing: 0.55em;
-    color: var(--gold-deep);
-    margin-bottom: 24px;
-    text-indent: 0.55em;
-}
-
-.title-divider {
-    display: flex;
-    justify-content: center;
-    margin: 8px auto 22px;
-}
-.title-divider svg {
-    width: 100%;
-    max-width: 380px;
-    height: auto;
-}
-
-.author-title {
-    font-family: 'Cinzel', serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: clamp(0.78rem, 1.7vw, 0.95rem);
-    letter-spacing: 0.42em;
-    color: var(--walnut);
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    text-indent: 0.42em;
-}
-
-.author-title-jp {
-    font-family: 'Shippori Mincho', serif;
-    font-weight: 400;
-    font-size: clamp(0.8rem, 1.7vw, 0.95rem);
-    letter-spacing: 0.45em;
-    color: var(--ink-soft);
-    text-indent: 0.45em;
-}
-
-/* ============================================================
-   Section — shared
-   ============================================================ */
-.section {
-    margin-bottom: 80px;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 38px;
-    line-height: 1.4;
-}
-
-.section-title .title-en {
-    display: block;
-    font-family: 'Cinzel', serif;
-    font-weight: 600;
-    font-size: clamp(1.2rem, 2.6vw, 1.6rem);
-    letter-spacing: 0.55em;
-    color: var(--ink);
-    text-transform: uppercase;
-    text-indent: 0.55em;
-    margin-bottom: 6px;
-}
-
-.section-title .title-jp {
-    display: block;
-    font-family: 'Shippori Mincho', serif;
-    font-size: clamp(0.78rem, 1.6vw, 0.92rem);
-    letter-spacing: 0.4em;
-    color: var(--gold-deep);
-    font-weight: 400;
-    text-indent: 0.4em;
-}
-
-/* ============================================================
-   Awards
-   ============================================================ */
-/* Certificate-style awards: dark wooden background, gold frame, gold text */
-.awards-frame {
-    position: relative;
-    padding: 0 36px;
-    background-color: #3A2414;
+/* ----- Oak wood frame ----- */
+.oak-frame {
+    border-radius: 4px;
     background-image:
-        /* Subtle wood grain */
-        repeating-linear-gradient(
-            90deg,
-            rgba(0,0,0,0.18) 0px,
-            transparent 1px,
-            transparent 3px,
-            rgba(0,0,0,0.10) 4px,
-            transparent 5px,
-            transparent 12px
-        ),
-        repeating-linear-gradient(
-            90deg,
-            transparent 0px,
-            transparent 60px,
-            rgba(255,220,150,0.04) 60px,
-            rgba(255,220,150,0.04) 64px
-        ),
-        radial-gradient(ellipse at 30% 20%, rgba(120,75,40,0.5) 0%, transparent 60%),
-        radial-gradient(ellipse at 70% 80%, rgba(60,30,15,0.5) 0%, transparent 60%),
-        linear-gradient(160deg, #4A2D18 0%, #2E1A0E 50%, #4A2D18 100%);
-    border: 2px solid var(--gold-light);
+        repeating-linear-gradient(90deg,
+            rgba(74,47,22,0.18) 0px,
+            rgba(110,75,38,0.06) 1px,
+            rgba(74,47,22,0.20) 2px,
+            rgba(140,95,50,0.04) 4px,
+            rgba(74,47,22,0.14) 7px),
+        repeating-linear-gradient(88deg,
+            rgba(60,38,18,0.10) 0px,
+            rgba(120,80,42,0.02) 14px,
+            rgba(60,38,18,0.12) 28px),
+        radial-gradient(ellipse at 18% 30%, rgba(50,30,14,0.55), transparent 35%),
+        radial-gradient(ellipse at 78% 70%, rgba(50,30,14,0.45), transparent 40%),
+        linear-gradient(180deg, #8b5a2b 0%, #6d4520 50%, #4a2f16 100%);
     box-shadow:
-        /* Outer gold frame layers — like a picture frame */
-        0 0 0 1px rgba(217,184,100,0.4),
-        0 0 0 7px #2E1A0E,
-        0 0 0 8px var(--gold-light),
-        0 0 0 10px rgba(217,184,100,0.6),
-        0 0 0 13px #2E1A0E,
-        0 0 0 14px rgba(217,184,100,0.4),
-        /* Drop shadow */
-        0 18px 50px rgba(43,27,16,0.45),
-        /* Inner glow */
-        inset 0 0 80px rgba(0,0,0,0.55),
-        inset 0 0 40px rgba(217,184,100,0.06);
+        inset 0 0 0 2px rgba(40,24,8,0.6),
+        inset 0 0 0 6px rgba(180,140,80,0.25),
+        inset 0 0 22px rgba(20,10,0,0.55),
+        0 8px 28px rgba(40,22,8,0.35);
 }
 
-/* Inner gold border line */
-.awards-frame::before {
-    content: '';
+/* ----- Brass corner bolts ----- */
+.corner-deco {
     position: absolute;
-    inset: 8px;
-    border: 1px solid rgba(217,184,100,0.5);
-    pointer-events: none;
-    z-index: 1;
+    width: 38px;
+    height: 38px;
+    background: radial-gradient(circle at 30% 30%, #f5d98a, #8b6914 70%);
+    border: 1.5px solid #4a2f16;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5), inset 0 -2px 4px rgba(0,0,0,0.4);
+    z-index: 5;
 }
 
-.awards-ornament { width: 100%; display: block; position: relative; z-index: 2; }
-.awards-ornament-top    { margin-top: -1px; }
-.awards-ornament-bottom { margin-bottom: -1px; transform: scaleY(-1); }
-
-.awards-body {
-    padding: 26px 18px 32px;
-    position: relative;
-    z-index: 2;
+/* ----- Award inner background ----- */
+.award-inner-bg {
+    background: radial-gradient(ellipse at center, rgba(252,244,220,0.95) 0%, rgba(238,222,188,0.85) 100%);
 }
 
-.award-entry {
-    text-align: center;
-    padding: 22px 16px;
+/* ----- Author name gradient ----- */
+.author-name-grad {
+    font-family: 'Yuji Syuku', 'Shippori Mincho', serif;
+    background: linear-gradient(180deg, #6b3f1a 0%, #4a2811 45%, #2a1608 80%, #5a3216 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 1px 0 rgba(255,230,180,0.35);
+    filter: drop-shadow(0 2px 3px rgba(40,20,8,0.45));
 }
 
-.award-name {
-    font-family: 'Shippori Mincho', serif;
-    font-size: clamp(1rem, 2.4vw, 1.3rem);
-    font-weight: 600;
-    color: var(--gold-light);
-    letter-spacing: 0.12em;
-    margin-bottom: 12px;
-    text-shadow:
-        0 0 8px rgba(217,184,100,0.3),
-        1px 1px 2px rgba(0,0,0,0.6);
+/* ----- Nouveau gold gradient text ----- */
+.nouveau-text {
+    background: linear-gradient(180deg, #f5d98a 0%, #c9a14a 45%, #8b6914 75%, #d9b366 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 1px 0 rgba(255,240,200,0.4);
 }
 
-.award-result {
-    font-family: 'Cinzel', serif;
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: #E5C875;
-    letter-spacing: 0.7em;
-    text-indent: 0.7em;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+/* ----- Bookshelf interior ----- */
+.shelf-bg {
+    background: linear-gradient(180deg,
+        rgba(50,30,15,0.55) 0%,
+        rgba(80,50,25,0.35) 50%,
+        rgba(50,30,15,0.55) 100%);
+    box-shadow: inset 0 0 60px rgba(0,0,0,0.6);
 }
 
-.award-divider {
-    display: flex;
-    justify-content: center;
-    padding: 6px 0;
-}
-.award-divider svg { width: 100%; max-width: 380px; }
-
-/* ============================================================
-   Links
-   ============================================================ */
-.links-grid {
-    display: flex;
-    gap: 36px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.link-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-}
-
-.cat-link-btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 24px 28px 20px;
-    min-width: 158px;
-    background: linear-gradient(160deg, var(--cream) 0%, var(--cream-warm) 100%);
-    border: 1px solid var(--walnut-light);
-    border-radius: 2px;
-    text-decoration: none;
-    color: var(--ink);
-    cursor: pointer;
-    transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
-    position: relative;
+/* ----- Shelf board (wooden plank) ----- */
+.shelf-board {
+    background-image:
+        repeating-linear-gradient(90deg,
+            rgba(74,47,22,0.18) 0px,
+            rgba(110,75,38,0.06) 1px,
+            rgba(74,47,22,0.20) 2px,
+            rgba(140,95,50,0.04) 4px,
+            rgba(74,47,22,0.14) 7px),
+        linear-gradient(180deg, #8b5a2b 0%, #6d4520 50%, #4a2f16 100%);
     box-shadow:
-        0 0 0 1px rgba(168,138,58,0.25),
-        0 0 0 4px var(--cream),
-        0 0 0 5px rgba(168,138,58,0.4),
-        4px 6px 18px rgba(74,50,32,0.20);
+        0 4px 12px rgba(0,0,0,0.6),
+        inset 0 -2px 4px rgba(0,0,0,0.5),
+        inset 0 1px 1px rgba(255,220,160,0.2);
 }
 
-/* Inner gold corner accents */
-.cat-link-btn::before,
-.cat-link-btn::after {
-    content: '';
-    position: absolute;
-    width: 14px; height: 14px;
-    border: 1px solid var(--gold);
-    pointer-events: none;
-}
-.cat-link-btn::before {
-    top: 6px; left: 6px;
-    border-right: none; border-bottom: none;
-}
-.cat-link-btn::after {
-    bottom: 6px; right: 6px;
-    border-left: none; border-top: none;
+/* ----- Book caption ----- */
+.caption-bg {
+    background: linear-gradient(180deg, rgba(252,244,220,0.95), rgba(238,222,188,0.92));
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-.cat-link-btn:hover {
-    transform: translateY(-4px);
-    background: linear-gradient(160deg, #FAF3E1 0%, var(--cream) 100%);
+/* ----- Book 3D effect ----- */
+.book-3d {
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(.2, .8, .2, 1);
     box-shadow:
-        0 0 0 1px rgba(168,138,58,0.35),
-        0 0 0 4px var(--cream),
-        0 0 0 5px var(--gold),
-        6px 10px 26px rgba(74,50,32,0.25);
+        8px 6px 18px rgba(20,10,4,0.55),
+        inset -6px 0 12px rgba(0,0,0,0.35),
+        inset 4px 0 4px rgba(255,240,200,0.25);
+}
+.book-3d:hover {
+    transform: translateY(-14px) rotate(-1.2deg);
 }
 
-.cat-link-btn:active { transform: translateY(-1px); }
-
-.cat-head-svg {
-    width: 56px;
-    height: 52px;
-    transition: transform 0.35s ease;
+/* ----- Cat button hover ----- */
+.cat-btn {
+    transition: all 0.4s cubic-bezier(.2, .9, .3, 1);
 }
-.cat-link-btn:hover .cat-head-svg {
-    animation: headWiggle 0.4s ease-in-out;
+.cat-btn:hover {
+    transform: translateY(-6px) scale(1.05);
 }
 
-@keyframes headWiggle {
-    0%   { transform: rotate(0deg) scale(1); }
-    25%  { transform: rotate(-6deg) scale(1.06); }
-    75%  { transform: rotate(6deg) scale(1.06); }
-    100% { transform: rotate(0deg) scale(1.04); }
+@keyframes cat-blink {
+    0%, 92%, 100% { transform: scaleY(1); }
+    95% { transform: scaleY(0.1); }
+}
+.cat-btn:hover .cat-eye {
+    transform-origin: center;
+    animation: cat-blink 0.5s;
 }
 
-.cat-btn-label {
-    font-family: 'Cinzel', 'Shippori Mincho', serif;
-    font-size: 0.82rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    color: var(--walnut);
-    text-indent: 0.18em;
-    text-transform: uppercase;
-    white-space: nowrap;
+/* ----- Floating paw animation ----- */
+@keyframes paw-walk {
+    0%, 100% { opacity: 0.15; transform: translateY(0); }
+    50%       { opacity: 0.35; transform: translateY(-3px); }
+}
+.paw-anim {
+    animation: paw-walk 3s ease-in-out infinite;
 }
 
-.cat-btn-url {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 0.72rem;
-    color: var(--ink-mute);
-    letter-spacing: 0.06em;
-    text-align: center;
-    word-break: break-all;
-    max-width: 175px;
-    line-height: 1.4;
-}
-
-/* ============================================================
-   Works / Bookshelf
-   ============================================================ */
-.bookshelf-wrap {
-    position: relative;
-    padding: 0;
-    border: 1px solid var(--walnut);
-    background:
-        linear-gradient(180deg,
-            rgba(43,27,16,0.22) 0px,
-            transparent 22px),
-        linear-gradient(0deg,
-            rgba(43,27,16,0.18) 0px,
-            transparent 18px),
-        linear-gradient(160deg,
-            rgba(74,50,32,0.10) 0%,
-            rgba(244,235,217,0.55) 50%,
-            rgba(74,50,32,0.10) 100%);
-    box-shadow:
-        0 0 0 1px rgba(168,138,58,0.25),
-        0 0 0 4px var(--cream),
-        0 0 0 5px rgba(74,50,32,0.5),
-        0 14px 40px rgba(74,50,32,0.22),
-        inset 0 18px 28px rgba(43,27,16,0.18),
-        inset 0 -10px 20px rgba(43,27,16,0.14);
-}
-
-.shelf-rail {
-    position: absolute;
-    left: 0; right: 0;
-    height: 16px;
-    background: linear-gradient(180deg, var(--walnut-dark), var(--walnut), var(--walnut-dark));
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.4);
-}
-.top-rail    { top: 0; }
-.bottom-rail { bottom: 0; }
-
-.bookshelf-inner {
-    display: flex;
-    justify-content: center;
-    gap: 64px;
-    flex-wrap: wrap;
-    padding: 44px 50px 50px;
-}
-
-.book-card {
-    width: 175px;
-    transition: transform 0.45s cubic-bezier(.2,.8,.2,1);
-}
-.book-card:hover { transform: translateY(-12px); }
-
-.book-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-    text-decoration: none;
-    color: inherit;
-}
-
-.book-cover-wrap {
-    position: relative;
-    width: 170px;
-    aspect-ratio: 1 / 1.45;
-    border-radius: 1px 4px 4px 1px;
-    overflow: hidden;
-    background: linear-gradient(135deg, #2B1B10, #1A1006);
-    box-shadow:
-        -5px 0 12px rgba(0,0,0,0.4),
-        4px 6px 18px rgba(0,0,0,0.28),
-        inset -4px 0 8px rgba(0,0,0,0.22);
-}
-
-.book-img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.book-spine {
-    position: absolute;
-    top: 0; left: 0;
-    width: 12px; height: 100%;
-    background: linear-gradient(90deg, rgba(0,0,0,0.38), transparent);
-    pointer-events: none;
-}
-
-.book-hover-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(43,27,16,0.72);
-    color: var(--cream);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cinzel', serif;
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.4em;
-    text-indent: 0.4em;
-    opacity: 0;
-    transition: opacity 0.35s ease;
-}
-.book-card:hover .book-hover-overlay { opacity: 1; }
-
-.book-meta { text-align: center; }
-
-.book-title {
-    font-family: 'Shippori Mincho', serif;
-    font-size: 0.84rem;
-    font-weight: 600;
-    line-height: 1.7;
-    color: var(--ink);
-    margin-bottom: 6px;
-    letter-spacing: 0.04em;
-}
-
-.book-pub {
-    font-family: 'Cinzel', serif;
-    font-size: 0.7rem;
-    color: var(--gold-deep);
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-}
-
-.book-year {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 0.78rem;
-    color: var(--ink-mute);
-    letter-spacing: 0.06em;
-}
-
-/* ============================================================
-   Footer
-   ============================================================ */
-.footer {
-    text-align: center;
-    padding: 32px 20px 16px;
-    margin-top: 24px;
-}
-
-.footer-deco {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 16px;
-}
-.footer-deco svg { width: 100%; max-width: 380px; height: auto; }
-
-.footer-copy {
-    font-family: 'Cinzel', serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.4em;
-    color: var(--ink-mute);
-    text-indent: 0.4em;
-    text-transform: uppercase;
-}
-
-/* ============================================================
-   Scroll fade-in
-   ============================================================ */
+/* ----- Scroll fade-in ----- */
 .fade-up {
     opacity: 0;
     transform: translateY(28px);
@@ -636,21 +159,4 @@ body::after {
 .fade-up.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* ============================================================
-   Responsive
-   ============================================================ */
-@media (max-width: 720px) {
-    .container { padding: 36px 20px 60px; }
-    .hero { padding: 36px 16px 32px; }
-    .bookshelf-inner { gap: 36px; padding: 36px 20px 40px; }
-    .links-grid { gap: 22px; }
-}
-
-@media (max-width: 420px) {
-    .author-name   { letter-spacing: 0.18em; text-indent: 0.18em; }
-    .author-name-en { letter-spacing: 0.32em; text-indent: 0.32em; }
-    .cat-link-btn  { min-width: 140px; padding: 18px 22px 14px; }
-    .award-name    { font-size: 0.92rem; }
 }
