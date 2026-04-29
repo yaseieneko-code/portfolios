@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>野生のイエネコ — 小説家・漫画原作者</title>
+    <meta name="description" content="野生のイエネコ 公式ポートフォリオ。小説家・漫画原作者。第13回ネット小説大賞、第8回ライト文芸大賞 受賞。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Walking cat across the bottom -->
+    <div class="walking-cat" id="walkingCat" aria-hidden="true">
+        <svg viewBox="0 0 80 55" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="40" cy="36" rx="24" ry="16" fill="#1A1A1A"/>
+            <circle cx="40" cy="20" r="14" fill="#1A1A1A"/>
+            <polygon points="27,10 21,0 33,8" fill="#1A1A1A"/>
+            <polygon points="53,10 59,0 47,8" fill="#1A1A1A"/>
+            <polygon points="29,10 24,2 34,8" fill="#3D1520" opacity="0.7"/>
+            <polygon points="51,10 56,2 46,8" fill="#3D1520" opacity="0.7"/>
+            <ellipse cx="33" cy="19" rx="4.5" ry="5.5" fill="#C9A84C"/>
+            <ellipse cx="47" cy="19" rx="4.5" ry="5.5" fill="#C9A84C"/>
+            <ellipse cx="33" cy="19" rx="2" ry="5" fill="#0D0D0D"/>
+            <ellipse cx="47" cy="19" rx="2" ry="5" fill="#0D0D0D"/>
+            <circle cx="31" cy="16" r="1.2" fill="white" opacity="0.9"/>
+            <circle cx="45" cy="16" r="1.2" fill="white" opacity="0.9"/>
+            <polygon points="40,25 37.5,27.5 42.5,27.5" fill="#C98B9A"/>
+            <path d="M37.5,27.5 Q40,31 42.5,27.5" stroke="#2A1A1A" stroke-width="0.9" fill="none"/>
+            <line x1="10" y1="23" x2="34" y2="26" stroke="#aaa" stroke-width="0.8"/>
+            <line x1="10" y1="28" x2="34" y2="28" stroke="#aaa" stroke-width="0.8"/>
+            <line x1="46" y1="26" x2="70" y2="23" stroke="#aaa" stroke-width="0.8"/>
+            <line x1="46" y1="28" x2="70" y2="28" stroke="#aaa" stroke-width="0.8"/>
+            <path d="M62,40 Q78,28 76,14" stroke="#1A1A1A" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <rect x="22" y="48" width="5" height="7" rx="2.5" fill="#1A1A1A" class="leg leg-fl"/>
+            <rect x="30" y="48" width="5" height="7" rx="2.5" fill="#1A1A1A" class="leg leg-rl"/>
+            <rect x="44" y="48" width="5" height="7" rx="2.5" fill="#1A1A1A" class="leg leg-fr"/>
+            <rect x="52" y="48" width="5" height="7" rx="2.5" fill="#1A1A1A" class="leg leg-rr"/>
+        </svg>
+    </div>
+
+    <!-- Floating paw prints -->
+    <div class="paw-float paw-1" aria-hidden="true">
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="20" cy="28" rx="9" ry="7" fill="#6B4C2A" opacity="0.12"/>
+            <circle cx="11" cy="18" r="4" fill="#6B4C2A" opacity="0.12"/>
+            <circle cx="20" cy="14" r="4.5" fill="#6B4C2A" opacity="0.12"/>
+            <circle cx="29" cy="18" r="4" fill="#6B4C2A" opacity="0.12"/>
+        </svg>
+    </div>
+    <div class="paw-float paw-2" aria-hidden="true">
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="20" cy="28" rx="9" ry="7" fill="#6B4C2A" opacity="0.10"/>
+            <circle cx="11" cy="18" r="4" fill="#6B4C2A" opacity="0.10"/>
+            <circle cx="20" cy="14" r="4.5" fill="#6B4C2A" opacity="0.10"/>
+            <circle cx="29" cy="18" r="4" fill="#6B4C2A" opacity="0.10"/>
+        </svg>
+    </div>
+    <div class="paw-float paw-3" aria-hidden="true">
+        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="20" cy="28" rx="9" ry="7" fill="#6B4C2A" opacity="0.08"/>
+            <circle cx="11" cy="18" r="4" fill="#6B4C2A" opacity="0.08"/>
+            <circle cx="20" cy="14" r="4.5" fill="#6B4C2A" opacity="0.08"/>
+            <circle cx="29" cy="18" r="4" fill="#6B4C2A" opacity="0.08"/>
+        </svg>
+    </div>
+
+    <div class="container">
+
+        <!-- ===== HERO ===== -->
+        <header class="hero">
+            <!-- Top Art Nouveau border -->
+            <div class="nouveau-border" aria-hidden="true">
+                <svg viewBox="0 0 700 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,40 Q35,10 70,40 Q105,70 140,40 Q175,10 210,40 Q245,70 280,40 Q315,10 350,40 Q385,70 420,40 Q455,10 490,40 Q525,70 560,40 Q595,10 630,40 Q665,70 700,40"
+                          stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+                    <path d="M0,44 Q35,14 70,44 Q105,74 140,44 Q175,14 210,44 Q245,74 280,44 Q315,14 350,44 Q385,74 420,44 Q455,14 490,44 Q525,74 560,44 Q595,14 630,44 Q665,74 700,44"
+                          stroke="#C9A84C" stroke-width="0.5" fill="none" opacity="0.4"/>
+                    <circle cx="350" cy="8" r="5" fill="#C9A84C"/>
+                    <circle cx="175" cy="8" r="3" fill="#C9A84C" opacity="0.7"/>
+                    <circle cx="525" cy="8" r="3" fill="#C9A84C" opacity="0.7"/>
+                    <path d="M340,8 Q350,0 360,8" stroke="#C9A84C" stroke-width="1" fill="none"/>
+                </svg>
+            </div>
+
+            <div class="hero-content">
+                <!-- Sitting cat silhouette -->
+                <div class="hero-cat" aria-hidden="true">
+                    <svg viewBox="0 0 130 175" xmlns="http://www.w3.org/2000/svg" class="sitting-cat-svg">
+                        <ellipse cx="65" cy="128" rx="38" ry="45" fill="#1A1A1A" opacity="0.88"/>
+                        <circle cx="65" cy="72" r="32" fill="#1A1A1A" opacity="0.88"/>
+                        <polygon points="40,50 32,26 54,44" fill="#1A1A1A" opacity="0.88"/>
+                        <polygon points="90,50 98,26 76,44" fill="#1A1A1A" opacity="0.88"/>
+                        <polygon points="43,49 37,30 53,44" fill="#3D1520" opacity="0.65"/>
+                        <polygon points="87,49 93,30 77,44" fill="#3D1520" opacity="0.65"/>
+                        <ellipse cx="54" cy="70" rx="7" ry="8" fill="#C9A84C"/>
+                        <ellipse cx="76" cy="70" rx="7" ry="8" fill="#C9A84C"/>
+                        <ellipse cx="54" cy="71" rx="3.5" ry="7.5" fill="#0D0D0D"/>
+                        <ellipse cx="76" cy="71" rx="3.5" ry="7.5" fill="#0D0D0D"/>
+                        <circle cx="51" cy="66" r="2" fill="white" opacity="0.85"/>
+                        <circle cx="73" cy="66" r="2" fill="white" opacity="0.85"/>
+                        <polygon points="65,80 62,83 68,83" fill="#C98B9A"/>
+                        <path d="M62,83 Q65,87 68,83" stroke="#2A1A1A" stroke-width="1" fill="none"/>
+                        <line x1="28" y1="76" x2="56" y2="80" stroke="#999" stroke-width="0.9" opacity="0.7"/>
+                        <line x1="28" y1="82" x2="56" y2="82" stroke="#999" stroke-width="0.9" opacity="0.7"/>
+                        <line x1="74" y1="80" x2="102" y2="76" stroke="#999" stroke-width="0.9" opacity="0.7"/>
+                        <line x1="74" y1="82" x2="102" y2="82" stroke="#999" stroke-width="0.9" opacity="0.7"/>
+                        <path d="M95,155 Q122,132 120,105 Q118,85 103,90" stroke="#1A1A1A" stroke-width="11" fill="none" stroke-linecap="round" opacity="0.88"/>
+                        <ellipse cx="50" cy="168" rx="14" ry="8" fill="#1A1A1A" opacity="0.88"/>
+                        <ellipse cx="80" cy="168" rx="14" ry="8" fill="#1A1A1A" opacity="0.88"/>
+                    </svg>
+                </div>
+
+                <div class="hero-text">
+                    <div class="ornament-row">
+                        <span class="ornament-line"></span>
+                        <span class="ornament-diamond">◆</span>
+                        <span class="ornament-line"></span>
+                    </div>
+                    <h1 class="author-name">野生のイエネコ</h1>
+                    <p class="author-title-en">Yasei no Ieneko</p>
+                    <p class="author-title">小説家・漫画原作者</p>
+                    <div class="ornament-row">
+                        <span class="ornament-line"></span>
+                        <span class="ornament-diamond">◆</span>
+                        <span class="ornament-line"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Art Nouveau border -->
+            <div class="nouveau-border flip" aria-hidden="true">
+                <svg viewBox="0 0 700 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,40 Q35,10 70,40 Q105,70 140,40 Q175,10 210,40 Q245,70 280,40 Q315,10 350,40 Q385,70 420,40 Q455,10 490,40 Q525,70 560,40 Q595,10 630,40 Q665,70 700,40"
+                          stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+                    <path d="M0,44 Q35,14 70,44 Q105,74 140,44 Q175,14 210,44 Q245,74 280,44 Q315,14 350,44 Q385,74 420,44 Q455,14 490,44 Q525,74 560,44 Q595,14 630,44 Q665,74 700,44"
+                          stroke="#C9A84C" stroke-width="0.5" fill="none" opacity="0.4"/>
+                    <circle cx="350" cy="8" r="5" fill="#C9A84C"/>
+                    <circle cx="175" cy="8" r="3" fill="#C9A84C" opacity="0.7"/>
+                    <circle cx="525" cy="8" r="3" fill="#C9A84C" opacity="0.7"/>
+                </svg>
+            </div>
+        </header>
+
+        <!-- ===== AWARDS ===== -->
+        <section class="section awards-section" id="awards">
+            <div class="section-header">
+                <h2 class="section-title">受賞歴 <span class="title-en">Awards</span></h2>
+            </div>
+
+            <div class="awards-frame">
+                <!-- Top Art Nouveau ornament -->
+                <svg class="nouveau-awards top" viewBox="0 0 560 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M0,70 Q28,30 56,70 Q84,110 112,70 Q140,30 168,70 Q196,110 224,70 Q252,30 280,70 Q308,110 336,70 Q364,30 392,70 Q420,110 448,70 Q476,30 504,70 Q532,110 560,70"
+                          stroke="#C9A84C" stroke-width="1.8" fill="none"/>
+                    <path d="M0,75 Q28,35 56,75 Q84,115 112,75 Q140,35 168,75 Q196,115 224,75 Q252,35 280,75 Q308,115 336,75 Q364,35 392,75 Q420,115 448,75 Q476,35 504,75 Q532,115 560,75"
+                          stroke="#C9A84C" stroke-width="0.6" fill="none" opacity="0.4"/>
+                    <!-- Center medallion -->
+                    <circle cx="280" cy="18" r="12" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+                    <circle cx="280" cy="18" r="7" fill="none" stroke="#C9A84C" stroke-width="0.8"/>
+                    <circle cx="280" cy="18" r="3" fill="#C9A84C"/>
+                    <path d="M258,18 Q269,6 280,18 Q291,6 302,18" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
+                    <!-- Side flourishes -->
+                    <path d="M0,70 Q-5,50 8,40 Q14,55 0,70Z" fill="#C9A84C" opacity="0.5"/>
+                    <path d="M560,70 Q565,50 552,40 Q546,55 560,70Z" fill="#C9A84C" opacity="0.5"/>
+                    <line x1="0" y1="78" x2="560" y2="78" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
+                </svg>
+
+                <div class="awards-body">
+                    <div class="award-row">
+                        <div class="award-icon" aria-hidden="true">
+                            <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="15,2 17.5,10 26,10 19,15.5 21.5,24 15,18.5 8.5,24 11,15.5 4,10 12.5,10" fill="#C9A84C"/>
+                            </svg>
+                        </div>
+                        <p class="award-text">第13回ネット小説大賞　受賞</p>
+                    </div>
+
+                    <div class="award-sep" aria-hidden="true">
+                        <svg viewBox="0 0 260 18" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="0" y1="9" x2="108" y2="9" stroke="#C9A84C" stroke-width="0.8"/>
+                            <circle cx="130" cy="9" r="5" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
+                            <circle cx="130" cy="9" r="2" fill="#C9A84C"/>
+                            <line x1="152" y1="9" x2="260" y2="9" stroke="#C9A84C" stroke-width="0.8"/>
+                        </svg>
+                    </div>
+
+                    <div class="award-row">
+                        <div class="award-icon" aria-hidden="true">
+                            <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="15,2 17.5,10 26,10 19,15.5 21.5,24 15,18.5 8.5,24 11,15.5 4,10 12.5,10" fill="#C9A84C"/>
+                            </svg>
+                        </div>
+                        <p class="award-text">第8回ライト文芸大賞　料理・グルメ部門　受賞</p>
+                    </div>
+                </div>
+
+                <!-- Bottom Art Nouveau ornament -->
+                <svg class="nouveau-awards bottom" viewBox="0 0 560 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <line x1="0" y1="12" x2="560" y2="12" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
+                    <path d="M0,20 Q28,60 56,20 Q84,-20 112,20 Q140,60 168,20 Q196,-20 224,20 Q252,60 280,20 Q308,-20 336,20 Q364,60 392,20 Q420,-20 448,20 Q476,60 504,20 Q532,-20 560,20"
+                          stroke="#C9A84C" stroke-width="1.8" fill="none"/>
+                    <path d="M0,25 Q28,65 56,25 Q84,-15 112,25 Q140,65 168,25 Q196,-15 224,25 Q252,65 280,25 Q308,-15 336,25 Q364,65 392,25 Q420,-15 448,25 Q476,65 504,25 Q532,-15 560,25"
+                          stroke="#C9A84C" stroke-width="0.6" fill="none" opacity="0.4"/>
+                    <circle cx="280" cy="72" r="12" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+                    <circle cx="280" cy="72" r="7" fill="none" stroke="#C9A84C" stroke-width="0.8"/>
+                    <circle cx="280" cy="72" r="3" fill="#C9A84C"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ===== LINKS ===== -->
+        <section class="section links-section" id="links">
+            <div class="section-header">
+                <h2 class="section-title">リンク <span class="title-en">Links</span></h2>
+            </div>
+
+            <div class="links-grid">
+                <!-- X (Twitter) -->
+                <div class="link-card">
+                    <a href="https://twitter.com/yaseieneko" target="_blank" rel="noopener noreferrer" class="cat-link-btn" aria-label="X (Twitter) — @yaseieneko">
+                        <div class="cat-head-svg" aria-hidden="true">
+                            <svg viewBox="0 0 60 56" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="30" cy="34" rx="24" ry="20" fill="#1A1A1A"/>
+                                <polygon points="10,21 4,6 20,17" fill="#1A1A1A"/>
+                                <polygon points="50,21 56,6 40,17" fill="#1A1A1A"/>
+                                <polygon points="12,20 7,8 19,17" fill="#3D1520" opacity="0.65"/>
+                                <polygon points="48,20 53,8 41,17" fill="#3D1520" opacity="0.65"/>
+                                <ellipse cx="22" cy="32" rx="5.5" ry="6.5" fill="#C9A84C"/>
+                                <ellipse cx="38" cy="32" rx="5.5" ry="6.5" fill="#C9A84C"/>
+                                <ellipse cx="22" cy="32" rx="2.5" ry="6" fill="#0D0D0D"/>
+                                <ellipse cx="38" cy="32" rx="2.5" ry="6" fill="#0D0D0D"/>
+                                <circle cx="20" cy="28" r="1.5" fill="white" opacity="0.9"/>
+                                <circle cx="36" cy="28" r="1.5" fill="white" opacity="0.9"/>
+                                <polygon points="30,39 27.5,42 32.5,42" fill="#C98B9A"/>
+                                <path d="M27.5,42 Q30,46 32.5,42" stroke="#2A1A1A" stroke-width="0.9" fill="none"/>
+                                <line x1="4" y1="37" x2="24" y2="40" stroke="#aaa" stroke-width="0.8"/>
+                                <line x1="4" y1="42" x2="24" y2="42" stroke="#aaa" stroke-width="0.8"/>
+                                <line x1="36" y1="40" x2="56" y2="37" stroke="#aaa" stroke-width="0.8"/>
+                                <line x1="36" y1="42" x2="56" y2="42" stroke="#aaa" stroke-width="0.8"/>
+                            </svg>
+                        </div>
+                        <span class="cat-btn-label">X (Twitter)</span>
+                    </a>
+                    <p class="cat-btn-url">twitter.com/yaseieneko</p>
+                </div>
+
+                <!-- 小説家になろう -->
+                <div class="link-card">
+                    <a href="https://mypage.syosetu.com/1672971/" target="_blank" rel="noopener noreferrer" class="cat-link-btn" aria-label="小説家になろう">
+                        <div class="cat-head-svg" aria-hidden="true">
+                            <svg viewBox="0 0 60 56" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="30" cy="34" rx="24" ry="20" fill="#1A1A1A"/>
+                                <polygon points="10,21 4,6 20,17" fill="#1A1A1A"/>
+                                <polygon points="50,21 56,6 40,17" fill="#1A1A1A"/>
+                                <polygon points="12,20 7,8 19,17" fill="#3D1520" opacity="0.65"/>
+                                <polygon points="48,20 53,8 41,17" fill="#3D1520" opacity="0.65"/>
+                                <ellipse cx="22" cy="32" rx="5.5" ry="6.5" fill="#C9A84C"/>
+                                <ellipse cx="38" cy="32" rx="5.5" ry="6.5" fill="#C9A84C"/>
+                                <ellipse cx="22" cy="32" rx="2.5" ry="6" fill="#0D0D0D"/>
+                                <ellipse cx="38" cy="32" rx="2.5" ry="6" fill="#0D0D0D"/>
+                                <circle cx="20" cy="28" r="1.5" fill="white" opacity="0.9"/>
+                                <circle cx="36" cy="28" r="1.5" fill="white" opacity="0.9"/>
+                                <polygon points="30,39 27.5,42 32.5,42" fill="#C98B9A"/>
+                                <path d="M27.5,42 Q30,46 32.5,42" stroke="#2A1A1A" stroke-width="0.9" fill="none"/>
+                                <line x1="4" y1="37" x2="24" y2="40" stroke="#aaa" stroke-width="0.8"/>
+                                <line x1="4" y1="42" x2="24" y2="42" stroke="#aaa" stroke-width="0.8"/>
+                                <line x1="36" y1="40" x2="56" y2="37" stroke="#aaa" stroke-width="0.8"/>
+                                <line x1="36" y1="42" x2="56" y2="42" stroke="#aaa" stroke-width="0.8"/>
+                            </svg>
+                        </div>
+                        <span class="cat-btn-label">小説家になろう</span>
+                    </a>
+                    <p class="cat-btn-url">mypage.syosetu.com/1672971/</p>
+                </div>
+
+                <!-- お問い合わせ -->
+                <div class="link-card">
+                    <a href="https://form.run/@yaseieneko-IHhS4nvQhddS0viY89A1" target="_blank" rel="noopener noreferrer" class="cat-link-btn" aria-label="お問い合わせフォーム">
+                        <div class="cat-head-svg" aria-hidden="true">
+                            <svg viewBox="0 0 60 56" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="30" cy="34" rx="24" ry="20" fill="#1A1A1A"/>
+                                <polygon points="10,21 4,6 20,17" fill="#1A1A1A"/>
+                                <polygon points="50,21 56,6 40,17" fill="#1A1A1A"/>
+                                <polygon points="12,20 7,8 19,17" fill="#3D1520" opacity="0.65"/>
+                                <polygon points="48,20 53,8 41,17" fill="#3D1520" opacity="0.65"/>
+                                <ellipse cx="22" cy="32" rx="5.5" ry="6.5" fill="#C9A84C"/>
+                                <ellipse cx="38" cy="32" rx="5.5" ry="6.5" fill="#C9A84C"/>
+                                <ellipse cx="22" cy="32" rx="2.5" ry="6" fill="#0D0D0D"/>
+                                <ellipse cx="38" cy="32" rx="2.5" ry="6" fill="#0D0D0D"/>
+                                <circle cx="20" cy="28" r="1.5" fill="white" opacity="0.9"/>
+                                <circle cx="36" cy="28" r="1.5" fill="white" opacity="0.9"/>
+                                <!-- Happy eyes for contact -->
+                                <path d="M17,28 Q22,24 27,28" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+                                <path d="M33,28 Q38,24 43,28" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+                                <polygon points="30,39 27.5,42 32.5,42" fill="#C98B9A"/>
+                                <path d="M27.5,42 Q30,46 32.5,42" stroke="#2A1A1A" stroke-width="0.9" fill="none"/>
+                                <line x1="4" y1="37" x2="24" y2="40" stroke="#aaa" stroke-width="0.8"/>
+                                <line x1="4" y1="42" x2="24" y2="42" stroke="#aaa" stroke-width="0.8"/>
+                                <line x1="36" y1="40" x2="56" y2="37" stroke="#aaa" stroke-width="0.8"/>
+                                <line x1="36" y1="42" x2="56" y2="42" stroke="#aaa" stroke-width="0.8"/>
+                            </svg>
+                        </div>
+                        <span class="cat-btn-label">お問い合わせ</span>
+                    </a>
+                    <p class="cat-btn-url">form.run/@yaseieneko</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== WORKS / BOOKSHELF ===== -->
+        <section class="section works-section" id="works">
+            <div class="section-header">
+                <h2 class="section-title">著作 <span class="title-en">Works</span></h2>
+            </div>
+
+            <div class="bookshelf-wrap">
+                <div class="shelf-rail top-rail"></div>
+                <div class="bookshelf-inner">
+                    <!-- Book 1 -->
+                    <div class="book-card">
+                        <a href="https://www.kadokawa.co.jp/product/302510004766/" target="_blank" rel="noopener noreferrer" class="book-link">
+                            <div class="book-cover-wrap">
+                                <img
+                                    src="https://cdn.kdkw.jp/cover_1000/302510/302510004766.webp"
+                                    alt="普通じゃないと言われる令嬢でも愛してくれますか？アンソロジーコミック 表紙"
+                                    class="book-img"
+                                    onerror="this.onerror=null; this.src='images/book-cover-1.jpg';"
+                                >
+                                <div class="book-spine"></div>
+                                <div class="book-hover-overlay">
+                                    <span>詳細を見る →</span>
+                                </div>
+                            </div>
+                            <div class="book-meta">
+                                <p class="book-title">普通じゃないと言われる令嬢でも<br>愛してくれますか？<br>アンソロジーコミック</p>
+                                <p class="book-pub">KADOKAWA（ブシロードコミックス）</p>
+                                <p class="book-year">2026年1月</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Book 2 -->
+                    <div class="book-card">
+                        <a href="https://hifumi.co.jp/lineup/9784824205865/" target="_blank" rel="noopener noreferrer" class="book-link">
+                            <div class="book-cover-wrap">
+                                <img
+                                    src="images/book-cover-2.jpg"
+                                    alt="著作2 表紙"
+                                    class="book-img"
+                                    onerror="this.onerror=null; this.src='images/placeholder-book2.svg';"
+                                >
+                                <div class="book-spine"></div>
+                                <div class="book-hover-overlay">
+                                    <span>詳細を見る →</span>
+                                </div>
+                            </div>
+                            <div class="book-meta">
+                                <p class="book-title">水竜侯爵は<br>甘いものがお好き</p>
+                                <p class="book-pub">一二三書房</p>
+                                <p class="book-year">Illustration: 志田</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="shelf-rail bottom-rail"></div>
+            </div>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <div class="footer-cats" aria-hidden="true">
+                <svg viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Left small cat -->
+                    <circle cx="30" cy="22" r="12" fill="#1A1A1A" opacity="0.2"/>
+                    <polygon points="22,14 18,6 28,12" fill="#1A1A1A" opacity="0.2"/>
+                    <polygon points="38,14 42,6 32,12" fill="#1A1A1A" opacity="0.2"/>
+                    <ellipse cx="30" cy="38" rx="14" ry="10" fill="#1A1A1A" opacity="0.2"/>
+                    <!-- Right small cat -->
+                    <circle cx="130" cy="22" r="12" fill="#1A1A1A" opacity="0.2"/>
+                    <polygon points="122,14 118,6 128,12" fill="#1A1A1A" opacity="0.2"/>
+                    <polygon points="138,14 142,6 132,12" fill="#1A1A1A" opacity="0.2"/>
+                    <ellipse cx="130" cy="38" rx="14" ry="10" fill="#1A1A1A" opacity="0.2"/>
+                    <!-- Center paw -->
+                    <ellipse cx="80" cy="36" rx="8" ry="6" fill="#1A1A1A" opacity="0.15"/>
+                    <circle cx="72" cy="28" r="3.5" fill="#1A1A1A" opacity="0.15"/>
+                    <circle cx="80" cy="25" r="4" fill="#1A1A1A" opacity="0.15"/>
+                    <circle cx="88" cy="28" r="3.5" fill="#1A1A1A" opacity="0.15"/>
+                </svg>
+            </div>
+            <div class="footer-deco" aria-hidden="true">
+                <svg viewBox="0 0 300 16" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" y1="8" x2="120" y2="8" stroke="#C9A84C" stroke-width="0.8" opacity="0.4"/>
+                    <circle cx="150" cy="8" r="5" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.4"/>
+                    <circle cx="150" cy="8" r="2" fill="#C9A84C" opacity="0.4"/>
+                    <line x1="180" y1="8" x2="300" y2="8" stroke="#C9A84C" stroke-width="0.8" opacity="0.4"/>
+                </svg>
+            </div>
+            <p class="footer-copy">&copy; 2025 野生のイエネコ. All Rights Reserved.</p>
+        </footer>
+
+    </div><!-- /container -->
+
+    <script src="script.js"></script>
+</body>
+</html>
