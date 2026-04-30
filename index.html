@@ -99,16 +99,20 @@
             filter: drop-shadow(0 2px 3px rgba(40,20,8,0.45));
         }
         .nouveau-text {
-            background: none !important;
-            -webkit-background-clip: initial !important;
-            background-clip: initial !important;
-            color: #8c2939 !important;
-            text-shadow:
-                -1px -1px 0 #c9a14a,
-                 1px -1px 0 #c9a14a,
-                -1px  1px 0 #c9a14a,
-                 1px  1px 0 #c9a14a,
-                 0    0   4px rgba(201,161,74,0.45) !important;
+            background: linear-gradient(180deg,
+                #e0b878 0%,
+                #b88848 28%,
+                #8c5e2a 55%,
+                #a87038 78%,
+                #d4a060 100%) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            color: transparent !important;
+            -webkit-text-fill-color: transparent;
+            filter:
+                drop-shadow(0 1px 1px rgba(40,20,8,0.5))
+                drop-shadow(0 0 1px rgba(255,220,160,0.3)) !important;
+            text-shadow: none !important;
         }
         .award-inner-bg {
             background: radial-gradient(ellipse at center, rgba(252,244,220,0.95) 0%, rgba(238,222,188,0.85) 100%) !important;
