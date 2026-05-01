@@ -319,6 +319,9 @@
             </div>
         </section>
 
+        <!-- ============== CONTACT CARD (React) ============== -->
+        <div id="contact-card-root"></div>
+
         <!-- ============== LINKS ============== -->
         <section class="mt-16 md:mt-24">
             <div class="text-center mb-10">
@@ -418,6 +421,12 @@
             <p class="font-cormorant text-[10px] mt-2 italic text-amber-700/60">Crafted in the spirit of British antiquity ~ ねこと共に</p>
         </footer>
     </main>
+
+    <!-- React 18 + Babel standalone for ContactCard component -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel" data-presets="react" src="ContactCard.jsx"></script>
 
     <script src="script.js"></script>
 </body>
