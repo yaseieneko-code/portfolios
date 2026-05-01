@@ -239,21 +239,22 @@ const ContactCard = () => {
         rel="noopener noreferrer"
         style={{textDecoration:'none', display:'block', maxWidth:'700px', margin:'0 auto'}}
       >
+        {/* ── Thin ribbon frame ── */}
         <div
           ref={cardRef}
-          className="relative oak-frame p-3"
-          style={{transition:'transform 0.4s cubic-bezier(.2,.9,.3,1)', cursor:'pointer'}}
+          style={{
+            padding: '5px',
+            background: 'linear-gradient(135deg, #C09050 0%, #7A4A1E 25%, #9B6230 50%, #7A4A1E 75%, #C09050 100%)',
+            borderRadius: '6px',
+            boxShadow: '0 5px 24px rgba(40,20,8,0.18), inset 0 1px 0 rgba(255,220,150,0.18)',
+            transition: 'transform 0.4s cubic-bezier(.2,.9,.3,1)',
+            cursor: 'pointer'
+          }}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          {/* Corner bolts */}
-          <span className="corner-deco" style={{top:'8px',  left:'8px',  width:'24px', height:'24px'}}></span>
-          <span className="corner-deco" style={{top:'8px',  right:'8px', width:'24px', height:'24px'}}></span>
-          <span className="corner-deco" style={{bottom:'8px', left:'8px',  width:'24px', height:'24px'}}></span>
-          <span className="corner-deco" style={{bottom:'8px', right:'8px', width:'24px', height:'24px'}}></span>
-
           <div className="parchment-bg px-6 py-10 text-center"
-               style={{position:'relative', overflow:'hidden'}}>
+               style={{position:'relative', overflow:'hidden', borderRadius:'3px'}}>
             {/* Art Nouveau corner decorations */}
             <svg className="absolute top-2 left-2 w-14 h-14" viewBox="0 0 80 80">
               <use href="#nouveauCorner"/>
@@ -292,8 +293,34 @@ const ContactCard = () => {
                style={{letterSpacing:'0.15em'}}>
               ✉ &nbsp;Contact Form&nbsp; ✉
             </p>
-            <div className="mt-4 font-fell text-[11px] tracking-[0.4em] text-amber-700/75">
-              ── click here ──
+            {/* ── Glossy brown CTA button ── */}
+            <div style={{display:'inline-block', position:'relative', overflow:'hidden',
+                         marginTop:'22px', padding:'14px 52px',
+                         background:'linear-gradient(180deg, #C07830 0%, #8A4418 42%, #5A2C0E 73%, #7A3A1A 100%)',
+                         border:'1px solid #3A1A08',
+                         borderRadius:'5px',
+                         boxShadow:'0 8px 22px rgba(40,20,8,0.58), 0 3px 7px rgba(40,20,8,0.32), inset 0 1px 0 rgba(255,225,150,0.30), inset 0 -3px 6px rgba(0,0,0,0.35)',
+                         cursor:'pointer'}}>
+              {/* Top gloss sheen */}
+              <span style={{position:'absolute', top:0, left:0, right:0,
+                            height:'46%',
+                            background:'linear-gradient(180deg, rgba(255,218,130,0.28) 0%, rgba(255,218,130,0.02) 100%)',
+                            borderRadius:'4px 4px 50% 50% / 4px 4px 80% 80%',
+                            pointerEvents:'none'}}></span>
+              {/* Bottom shadow inset */}
+              <span style={{position:'absolute', bottom:0, left:0, right:0,
+                            height:'28%',
+                            background:'linear-gradient(0deg, rgba(0,0,0,0.30) 0%, transparent 100%)',
+                            pointerEvents:'none'}}></span>
+              {/* Label */}
+              <span style={{position:'relative',
+                            fontFamily:"'Cinzel','IM Fell English SC',serif",
+                            fontSize:'14px', fontWeight:'700',
+                            letterSpacing:'0.35em',
+                            color:'#F5D98A',
+                            textShadow:'0 1px 3px rgba(40,20,8,0.85), 0 0 10px rgba(255,200,60,0.22)'}}>
+                ✉ &nbsp;CONTACT HERE&nbsp; ✉
+              </span>
             </div>
           </div>
         </div>
