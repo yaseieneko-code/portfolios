@@ -141,6 +141,17 @@
     animation: cat-blink 0.5s;
 }
 
+/* ----- Contact image card ----- */
+.contact-image-link:hover img,
+.contact-image-link:focus-visible img {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 42px rgba(70, 38, 10, 0.26);
+}
+
+.contact-image-link:focus-visible {
+    outline: 2px solid rgba(139, 94, 52, 0.72);
+}
+
 /* ----- Floating paw animation ----- */
 @keyframes paw-walk {
     0%, 100% { opacity: 0.15; transform: translateY(0); }
