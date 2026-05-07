@@ -2,308 +2,234 @@
 
 const { useRef } = React;
 
-const ContactIllustration = () => (
-  <svg viewBox="0 0 380 215" xmlns="http://www.w3.org/2000/svg" style={{width:'100%', maxWidth:'480px', maxHeight:'240px'}}>
+const ContactCardSVG = () => (
+  <svg
+    viewBox="0 0 720 840"
+    role="img"
+    aria-label="お問い合わせフォームへの装飾カード"
+    style={{ width: "100%", height: "auto", display: "block", pointerEvents: "none" }}
+  >
     <defs>
-      <linearGradient id="ccBronzeH" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0%"   stopColor="#7A4A1E"/>
-        <stop offset="20%"  stopColor="#B07028"/>
-        <stop offset="45%"  stopColor="#E8A050"/>
-        <stop offset="70%"  stopColor="#B07028"/>
-        <stop offset="100%" stopColor="#6B3A15"/>
-      </linearGradient>
-      <linearGradient id="ccBronzeDome" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%"   stopColor="#F0C060"/>
-        <stop offset="35%"  stopColor="#C88840"/>
-        <stop offset="75%"  stopColor="#8B5820"/>
-        <stop offset="100%" stopColor="#5A3010"/>
-      </linearGradient>
-      <radialGradient id="ccBronzeKnob" cx="0.3" cy="0.3" r="0.65">
-        <stop offset="0%"   stopColor="#F5D070"/>
-        <stop offset="50%"  stopColor="#C08030"/>
-        <stop offset="100%" stopColor="#6B3A15"/>
+      <radialGradient id="ccPaper" cx="50%" cy="44%" r="70%">
+        <stop offset="0%" stopColor="#FFF8DF" />
+        <stop offset="58%" stopColor="#F4E4C0" />
+        <stop offset="100%" stopColor="#E8D0A4" />
       </radialGradient>
-      <radialGradient id="ccCatEye" cx="0.35" cy="0.35" r="0.6">
-        <stop offset="0%"   stopColor="#FBF0A0"/>
-        <stop offset="40%"  stopColor="#C9A14A"/>
-        <stop offset="100%" stopColor="#5A3E10"/>
+      <linearGradient id="ccGoldLine" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stopColor="#F2D89A" />
+        <stop offset="38%" stopColor="#C7954C" />
+        <stop offset="70%" stopColor="#8B5E34" />
+        <stop offset="100%" stopColor="#E8C782" />
+      </linearGradient>
+      <linearGradient id="ccBronze" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stopColor="#7C471A" />
+        <stop offset="18%" stopColor="#B8732A" />
+        <stop offset="46%" stopColor="#E5AB58" />
+        <stop offset="76%" stopColor="#9A5B22" />
+        <stop offset="100%" stopColor="#63320F" />
+      </linearGradient>
+      <linearGradient id="ccBronzeV" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stopColor="#F0C46E" />
+        <stop offset="44%" stopColor="#A86828" />
+        <stop offset="100%" stopColor="#5B2C0C" />
+      </linearGradient>
+      <radialGradient id="ccEye" cx="36%" cy="34%" r="68%">
+        <stop offset="0%" stopColor="#FFF5B8" />
+        <stop offset="44%" stopColor="#D89C32" />
+        <stop offset="100%" stopColor="#4E320B" />
       </radialGradient>
-      <linearGradient id="ccEnvBody" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%"   stopColor="#FCF5DC"/>
-        <stop offset="100%" stopColor="#EBD8A8"/>
+      <linearGradient id="ccEnvelope" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stopColor="#FFF6D8" />
+        <stop offset="100%" stopColor="#E7C98E" />
       </linearGradient>
-      <linearGradient id="ccLetterPaper" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%"   stopColor="#FFFDF0"/>
-        <stop offset="100%" stopColor="#F5EDD0"/>
+      <linearGradient id="ccButton" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stopColor="#C7863D" />
+        <stop offset="42%" stopColor="#8E4E1D" />
+        <stop offset="76%" stopColor="#5C2E0D" />
+        <stop offset="100%" stopColor="#7A4218" />
       </linearGradient>
+      <linearGradient id="ccRibbon" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stopColor="#6B3511" />
+        <stop offset="25%" stopColor="#B97831" />
+        <stop offset="55%" stopColor="#D6A243" />
+        <stop offset="82%" stopColor="#9A5B24" />
+        <stop offset="100%" stopColor="#5B2C0D" />
+      </linearGradient>
+      <filter id="ccSoftShadow" x="-20%" y="-20%" width="140%" height="150%">
+        <feDropShadow dx="0" dy="9" stdDeviation="8" floodColor="#4A2308" floodOpacity="0.22" />
+      </filter>
+      <filter id="ccButtonShadow" x="-20%" y="-50%" width="140%" height="200%">
+        <feDropShadow dx="0" dy="8" stdDeviation="7" floodColor="#351706" floodOpacity="0.55" />
+      </filter>
     </defs>
 
-    {/* Ground shadows */}
-    <ellipse cx="305" cy="207" rx="56" ry="7"  fill="rgba(40,20,8,0.25)"/>
-    <ellipse cx="195" cy="210" rx="42" ry="5"  fill="rgba(40,20,8,0.18)"/>
-    <ellipse cx="62"  cy="150" rx="62" ry="6"  fill="rgba(40,20,8,0.10)"/>
+    <rect x="36" y="30" width="648" height="760" rx="28" fill="url(#ccPaper)" opacity="0.96" />
+    <rect x="36" y="30" width="648" height="760" rx="28" fill="none" stroke="#C99A62" strokeWidth="1.1" opacity="0.42" />
 
-    {/* ── FLOATING ENVELOPE (top-left) ── */}
-    <g transform="translate(8,12) rotate(-14,65,65)">
-      {/* Letter peeking out */}
-      <rect x="18" y="5" width="94" height="58" rx="3"
-            fill="url(#ccLetterPaper)" stroke="#C9A14A" strokeWidth="1.2"/>
-      <line x1="28" y1="18" x2="102" y2="18" stroke="#C9A14A" strokeWidth="0.7" opacity="0.65"/>
-      <line x1="28" y1="26" x2="102" y2="26" stroke="#C9A14A" strokeWidth="0.7" opacity="0.65"/>
-      <line x1="28" y1="34" x2="88"  y2="34" stroke="#C9A14A" strokeWidth="0.7" opacity="0.65"/>
-      <line x1="28" y1="42" x2="96"  y2="42" stroke="#C9A14A" strokeWidth="0.7" opacity="0.55"/>
-      {/* Paw print on letter */}
-      <g fill="#C9A14A" opacity="0.30">
-        <ellipse cx="90" cy="50" rx="4"   ry="3"/>
-        <ellipse cx="84" cy="45" rx="2"   ry="2.5"/>
-        <ellipse cx="90" cy="43" rx="2"   ry="2.5"/>
-        <ellipse cx="96" cy="45" rx="2"   ry="2.5"/>
-      </g>
-      {/* Envelope body */}
-      <rect x="5" y="32" width="120" height="82" rx="5"
-            fill="url(#ccEnvBody)" stroke="#C9A14A" strokeWidth="1.5"/>
-      {/* Lower fold */}
-      <path d="M5 114 L65 76 L125 114"
-            fill="#E8D5A0" stroke="#C9A14A" strokeWidth="0.8" opacity="0.65"/>
-      {/* Open flap */}
-      <path d="M5 32 L65 68 L125 32"
-            fill="#F5E8C8" stroke="#C9A14A" strokeWidth="1.4" strokeLinejoin="round"/>
-      {/* Wax seal */}
-      <circle cx="65" cy="97" r="15" fill="#7A1515" opacity="0.88"/>
-      <circle cx="65" cy="97" r="11" fill="#922020" opacity="0.85"/>
-      {/* Paw seal */}
-      <g fill="#F0D080" opacity="0.82" transform="translate(58,89)">
-        <ellipse cx="7"  cy="10" rx="5"   ry="4"/>
-        <ellipse cx="0"  cy="5"  rx="2.5" ry="3"/>
-        <ellipse cx="7"  cy="3"  rx="2.5" ry="3"/>
-        <ellipse cx="14" cy="5"  rx="2.5" ry="3"/>
+    <g fill="none" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M 106 72 C 232 96 488 96 614 72 Q 612 118 658 124 L 658 656 Q 612 662 614 710 C 488 686 232 686 106 710 Q 108 662 62 656 L 62 124 Q 108 118 106 72 Z"
+        stroke="url(#ccGoldLine)" strokeWidth="2.6" />
+      <path d="M 120 88 C 240 108 480 108 600 88 Q 600 132 642 140 L 642 640 Q 600 648 600 692 C 480 672 240 672 120 692 Q 120 648 78 640 L 78 140 Q 120 132 120 88 Z"
+        stroke="#A9763C" strokeWidth="1" opacity="0.58" />
+      <path d="M 140 104 C 252 118 468 118 580 104 M 140 676 C 252 662 468 662 580 676"
+        stroke="#D9B672" strokeWidth="0.95" opacity="0.75" />
+    </g>
+
+    <g fill="none" stroke="#D0A15B" strokeWidth="1.25" opacity="0.66">
+      <path d="M 90 128 C 60 110 68 70 98 78 C 132 88 116 132 82 150 C 56 164 48 122 76 96" />
+      <path d="M 130 104 C 96 92 90 48 122 48 C 156 50 156 96 124 126 C 98 150 78 118 100 88" />
+      <path d="M 630 128 C 660 110 652 70 622 78 C 588 88 604 132 638 150 C 664 164 672 122 644 96" />
+      <path d="M 590 104 C 624 92 630 48 598 48 C 564 50 564 96 596 126 C 622 150 642 118 620 88" />
+      <path d="M 90 620 C 60 638 68 678 98 670 C 132 660 116 616 82 598 C 56 584 48 626 76 652" />
+      <path d="M 630 620 C 660 638 652 678 622 670 C 588 660 604 616 638 598 C 664 584 672 626 644 652" />
+    </g>
+
+    <g transform="translate(88 148) rotate(-12 98 88)" filter="url(#ccSoftShadow)">
+      <rect x="58" y="6" width="116" height="72" rx="4" fill="#FFF9E8" stroke="#D3A45E" strokeWidth="1.7" />
+      <path d="M 76 26 L 158 26 M 76 39 L 146 39 M 76 52 L 154 52" stroke="#D7B56E" strokeWidth="1.2" opacity="0.65" />
+      <rect x="12" y="52" width="170" height="112" rx="8" fill="url(#ccEnvelope)" stroke="#C9954A" strokeWidth="2" />
+      <path d="M 12 52 L 98 107 L 182 52" fill="#F7E7C2" stroke="#C9954A" strokeWidth="1.8" />
+      <path d="M 12 164 L 98 104 L 182 164" fill="#E6C789" opacity="0.62" stroke="#C9954A" strokeWidth="1.2" />
+      <circle cx="98" cy="138" r="18" fill="#8F1F1E" />
+      <circle cx="98" cy="138" r="12" fill="#A52B28" />
+      <g fill="#F0D080" transform="translate(88 127)">
+        <ellipse cx="10" cy="15" rx="6" ry="5" />
+        <ellipse cx="2" cy="8" rx="3" ry="4" />
+        <ellipse cx="10" cy="5" rx="3" ry="4" />
+        <ellipse cx="18" cy="8" rx="3" ry="4" />
       </g>
     </g>
 
-    {/* ── BLACK CAT (sitting, center-left) ── */}
-    <g transform="translate(152,58)">
-      {/* Tail curling toward mailbox */}
-      <path d="M42 130 C65 148 88 138 92 112 C96 88 80 80 70 84"
-            stroke="#1a0f0f" strokeWidth="14" fill="none" strokeLinecap="round"/>
-      <path d="M42 130 C65 148 88 138 92 112 C96 88 80 80 70 84"
-            stroke="#241414" strokeWidth="9"  fill="none" strokeLinecap="round"/>
-      {/* Body */}
-      <ellipse cx="42" cy="108" rx="32" ry="40" fill="#1a0f0f"/>
-      <ellipse cx="42" cy="103" rx="27" ry="33" fill="#221414"/>
-      {/* Front legs */}
-      <rect x="18" y="132" width="15" height="20" rx="8" fill="#1a0f0f"/>
-      <rect x="51" y="132" width="15" height="20" rx="8" fill="#1a0f0f"/>
-      {/* Paws */}
-      <ellipse cx="25" cy="150" rx="11" ry="6" fill="#1e1010"/>
-      <ellipse cx="58" cy="150" rx="11" ry="6" fill="#1e1010"/>
-      {/* Chest lighter area */}
-      <ellipse cx="42" cy="113" rx="13" ry="18" fill="#271818" opacity="0.75"/>
-      {/* Head */}
-      <circle cx="42" cy="55" r="32" fill="#1a0f0f"/>
-      {/* Left ear */}
-      <path d="M20 36 L12 8  L34 30 Z" fill="#1a0f0f"/>
-      <path d="M22 34 L16 14 L32 28 Z" fill="#7A3045" opacity="0.55"/>
-      {/* Right ear */}
-      <path d="M64 36 L72 8  L50 30 Z" fill="#1a0f0f"/>
-      <path d="M62 34 L68 14 L52 28 Z" fill="#7A3045" opacity="0.55"/>
-      {/* Eyes */}
-      <ellipse cx="30" cy="53" rx="10" ry="11" fill="url(#ccCatEye)"/>
-      <ellipse cx="54" cy="53" rx="10" ry="11" fill="url(#ccCatEye)"/>
-      <ellipse cx="30" cy="53" rx="3.5" ry="9" fill="#080404"/>
-      <ellipse cx="54" cy="53" rx="3.5" ry="9" fill="#080404"/>
-      <circle cx="33" cy="48" r="3" fill="rgba(255,255,255,0.90)"/>
-      <circle cx="57" cy="48" r="3" fill="rgba(255,255,255,0.90)"/>
-      {/* Nose */}
-      <path d="M39 65 L42 69 L45 65 Z" fill="#D09090"/>
-      {/* Mouth */}
-      <path d="M42 69 Q37 74 33 72" stroke="#9B6060" strokeWidth="1" fill="none" strokeLinecap="round"/>
-      <path d="M42 69 Q47 74 51 72" stroke="#9B6060" strokeWidth="1" fill="none" strokeLinecap="round"/>
-      {/* Whiskers left */}
-      <line x1="10" y1="63" x2="30" y2="65" stroke="#9B8870" strokeWidth="0.9" opacity="0.8"/>
-      <line x1="9"  y1="69" x2="30" y2="69" stroke="#9B8870" strokeWidth="0.9" opacity="0.8"/>
-      <line x1="10" y1="75" x2="30" y2="73" stroke="#9B8870" strokeWidth="0.9" opacity="0.6"/>
-      {/* Whiskers right */}
-      <line x1="74" y1="63" x2="54" y2="65" stroke="#9B8870" strokeWidth="0.9" opacity="0.8"/>
-      <line x1="75" y1="69" x2="54" y2="69" stroke="#9B8870" strokeWidth="0.9" opacity="0.8"/>
-      <line x1="74" y1="75" x2="54" y2="73" stroke="#9B8870" strokeWidth="0.9" opacity="0.6"/>
-      {/* Collar (antique gold) */}
-      <path d="M16 72 Q42 85 68 72" stroke="#C9A14A" strokeWidth="4.5" fill="none"/>
-      {/* Bell */}
-      <circle cx="42" cy="82" r="5.5" fill="#C9A14A" stroke="#8B6914" strokeWidth="1"/>
-      <line x1="42" y1="86" x2="42" y2="88" stroke="#8B6914" strokeWidth="1"/>
-      <circle cx="42" cy="78" r="2" fill="rgba(255,235,150,0.4)"/>
+    <g transform="translate(318 180)" filter="url(#ccSoftShadow)">
+      <path d="M 72 180 C 104 206 132 184 128 144 C 126 118 108 108 94 118"
+        stroke="#1A0F0C" strokeWidth="15" fill="none" strokeLinecap="round" />
+      <path d="M 74 178 C 102 198 120 180 118 148 C 116 128 104 118 94 118"
+        stroke="#2A1712" strokeWidth="8" fill="none" strokeLinecap="round" />
+      <ellipse cx="62" cy="176" rx="45" ry="58" fill="#1A0F0C" />
+      <ellipse cx="62" cy="166" rx="35" ry="45" fill="#231410" />
+      <ellipse cx="62" cy="178" rx="20" ry="29" fill="#2F1A15" opacity="0.5" />
+      <path d="M 25 77 L 12 22 L 49 62 Z" fill="#160C0A" />
+      <path d="M 99 77 L 112 22 L 75 62 Z" fill="#160C0A" />
+      <path d="M 27 68 L 18 33 L 44 62 Z M 97 68 L 106 33 L 80 62 Z" fill="#7B3345" opacity="0.58" />
+      <circle cx="62" cy="96" r="47" fill="#1A0F0C" />
+      <circle cx="45" cy="91" r="14" fill="url(#ccEye)" />
+      <circle cx="79" cy="91" r="14" fill="url(#ccEye)" />
+      <ellipse cx="45" cy="92" rx="4.2" ry="11" fill="#080403" />
+      <ellipse cx="79" cy="92" rx="4.2" ry="11" fill="#080403" />
+      <circle cx="50" cy="85" r="3.3" fill="#FFF8D8" />
+      <circle cx="84" cy="85" r="3.3" fill="#FFF8D8" />
+      <path d="M 58 110 L 66 110 L 62 116 Z" fill="#D69A98" />
+      <path d="M 62 116 Q 56 123 50 120 M 62 116 Q 68 123 74 120" stroke="#B98A7E" strokeWidth="1.4" fill="none" />
+      <g stroke="#BAA17C" strokeWidth="1.25" opacity="0.82">
+        <path d="M 18 108 L 44 111 M 17 118 L 44 118 M 19 128 L 44 124" />
+        <path d="M 106 108 L 80 111 M 107 118 L 80 118 M 105 128 L 80 124" />
+      </g>
+      <path d="M 24 132 Q 62 149 100 132" stroke="#CDA24A" strokeWidth="6" fill="none" />
+      <path d="M 28 129 Q 62 140 96 129" stroke="#F0D080" strokeWidth="1.2" fill="none" opacity="0.75" />
+      <circle cx="62" cy="147" r="7" fill="#D1A04A" stroke="#7D5514" strokeWidth="1.2" />
+      <rect x="28" y="228" width="20" height="22" rx="10" fill="#1A0F0C" />
+      <rect x="76" y="228" width="20" height="22" rx="10" fill="#1A0F0C" />
+      <ellipse cx="38" cy="248" rx="16" ry="8" fill="#1A0F0C" />
+      <ellipse cx="86" cy="248" rx="16" ry="8" fill="#1A0F0C" />
     </g>
 
-    {/* ── BRONZE PILLAR POST BOX (right) ── */}
-    <g transform="translate(245,5)">
-      {/* Drop shadow */}
-      <ellipse cx="56" cy="203" rx="55" ry="8" fill="rgba(30,15,5,0.28)"/>
-      {/* Base plinth */}
-      <rect x="6"  y="190" width="100" height="16" rx="5" fill="#5A3010" stroke="#3A1A08" strokeWidth="1"/>
-      <rect x="10" y="192" width="92"  height="10" rx="3" fill="#6B3A15"/>
-      {/* Lower body band */}
-      <rect x="10" y="178" width="92" height="15" rx="4" fill="#7A4520" stroke="#4A2808" strokeWidth="0.8"/>
-      {/* Main cylindrical body */}
-      <rect x="12" y="62" width="88" height="120" rx="9"
-            fill="url(#ccBronzeH)" stroke="#4A2808" strokeWidth="1.5"/>
-      {/* Cylinder shadow left */}
-      <rect x="12" y="66" width="12" height="112" rx="6" fill="rgba(0,0,0,0.25)"/>
-      {/* Cylinder shadow right */}
-      <rect x="88" y="66" width="12" height="112" rx="6" fill="rgba(0,0,0,0.28)"/>
-      {/* Center highlight */}
-      <rect x="28" y="66" width="30" height="112" rx="8" fill="rgba(255,225,150,0.12)"/>
-      {/* Upper body band */}
-      <rect x="10" y="62" width="92" height="14" rx="7" fill="#7A4520" stroke="#4A2808" strokeWidth="0.8"/>
-      {/* Dome cap */}
-      <ellipse cx="56" cy="62" rx="47" ry="22"
-               fill="url(#ccBronzeDome)" stroke="#4A2808" strokeWidth="1.5"/>
-      <ellipse cx="40" cy="56" rx="23" ry="10" fill="rgba(255,232,165,0.20)"/>
-      <ellipse cx="56" cy="62" rx="47" ry="9"  fill="#7A4520" stroke="#4A2808" strokeWidth="0.8"/>
-      {/* Finial ring */}
-      <ellipse cx="56" cy="42" rx="17" ry="9" fill="#8B5820" stroke="#4A2808" strokeWidth="1"/>
-      {/* Finial ball/knob */}
-      <circle cx="56" cy="36" r="11" fill="url(#ccBronzeKnob)" stroke="#4A2808" strokeWidth="1"/>
-      <circle cx="52" cy="32" r="4"  fill="rgba(255,235,180,0.45)"/>
-      {/* Letter slot */}
-      <rect x="18" y="104" width="76" height="13" rx="6.5" fill="#2A1005" stroke="#4A2808" strokeWidth="1.2"/>
-      <rect x="20" y="107" width="72" height="7"  rx="3.5" fill="#160802"/>
-      <line x1="20" y1="107" x2="92" y2="107"
-            stroke="rgba(200,150,80,0.3)" strokeWidth="1"/>
-      {/* Royal cypher plate (oval) */}
-      <ellipse cx="56" cy="162" rx="33" ry="27" fill="#6B3A15" stroke="#4A2808" strokeWidth="1.2"/>
-      <ellipse cx="56" cy="162" rx="29" ry="23" fill="#7A4520"/>
-      <ellipse cx="56" cy="162" rx="25" ry="19" fill="#6B3A15" stroke="#C9A14A" strokeWidth="1"/>
-      {/* Crown */}
-      <path d="M44 150 L46 142 L50 148 L56 140 L62 148 L66 142 L68 150 Z"
-            fill="#C9A14A" stroke="#8B6914" strokeWidth="0.5"/>
-      <rect x="43" y="150" width="26" height="5" rx="2.5" fill="#C9A14A"/>
-      {/* GR monogram */}
-      <text x="56" y="173" textAnchor="middle"
-            fontFamily="'Cinzel','IM Fell English SC',serif"
-            fontSize="12" fontWeight="700" fill="#C9A14A" letterSpacing="3">GR</text>
-      {/* Aged patina spots */}
-      <ellipse cx="24" cy="144" rx="8"  ry="5"   fill="#3A7050" opacity="0.22"/>
-      <ellipse cx="87" cy="170" rx="6"  ry="4"   fill="#3A7050" opacity="0.18"/>
-      <ellipse cx="26" cy="182" rx="10" ry="5"   fill="#3A7050" opacity="0.20"/>
-      <ellipse cx="80" cy="124" rx="5"  ry="3.5" fill="#3A7050" opacity="0.15"/>
+    <g transform="translate(485 138)" filter="url(#ccSoftShadow)">
+      <ellipse cx="72" cy="312" rx="76" ry="12" fill="#59300F" opacity="0.35" />
+      <rect x="14" y="288" width="116" height="24" rx="7" fill="#5B2C0C" stroke="#3A1A08" strokeWidth="1.3" />
+      <rect x="8" y="265" width="128" height="28" rx="7" fill="#7C471A" stroke="#4A2409" strokeWidth="1.4" />
+      <rect x="18" y="82" width="108" height="190" rx="14" fill="url(#ccBronze)" stroke="#4A2409" strokeWidth="2" />
+      <rect x="20" y="90" width="16" height="174" rx="8" fill="#2D1305" opacity="0.25" />
+      <rect x="110" y="90" width="16" height="174" rx="8" fill="#2D1305" opacity="0.28" />
+      <rect x="42" y="92" width="34" height="170" rx="10" fill="#FFF1B0" opacity="0.13" />
+      <rect x="14" y="78" width="116" height="20" rx="10" fill="#8A5020" stroke="#4A2409" strokeWidth="1.3" />
+      <ellipse cx="72" cy="75" rx="61" ry="31" fill="url(#ccBronzeV)" stroke="#4A2409" strokeWidth="2" />
+      <ellipse cx="51" cy="66" rx="30" ry="12" fill="#FFE0A0" opacity="0.24" />
+      <ellipse cx="72" cy="78" rx="61" ry="12" fill="#7B4218" stroke="#4A2409" strokeWidth="1.2" />
+      <ellipse cx="72" cy="46" rx="22" ry="13" fill="#9A5B22" stroke="#4A2409" strokeWidth="1.4" />
+      <circle cx="72" cy="35" r="15" fill="url(#ccBronzeV)" stroke="#4A2409" strokeWidth="1.4" />
+      <circle cx="66" cy="29" r="5" fill="#FFF0B5" opacity="0.48" />
+      <rect x="26" y="148" width="92" height="16" rx="8" fill="#240D03" stroke="#4A2409" strokeWidth="1.6" />
+      <rect x="30" y="152" width="84" height="8" rx="4" fill="#100501" />
+      <ellipse cx="72" cy="232" rx="42" ry="34" fill="#6B3511" stroke="#4A2409" strokeWidth="1.5" />
+      <ellipse cx="72" cy="232" rx="34" ry="27" fill="#784319" stroke="#CFA45A" strokeWidth="1.3" />
+      <path d="M 56 217 L 60 205 L 67 214 L 72 203 L 79 214 L 86 205 L 89 217 Z" fill="#D0A24D" />
+      <rect x="54" y="217" width="36" height="7" rx="3.5" fill="#D0A24D" />
+      <text x="72" y="247" textAnchor="middle" fontFamily="'Cinzel','IM Fell English SC',serif" fontSize="18" fontWeight="700" fill="#D0A24D" letterSpacing="5">GR</text>
     </g>
 
-    {/* Ground decorative line */}
-    <line x1="8" y1="203" x2="372" y2="203"
-          stroke="#C9A14A" strokeWidth="0.8" opacity="0.40"/>
+    <ellipse cx="360" cy="468" rx="214" ry="8" fill="#5D310D" opacity="0.12" />
+    <path d="M 333 516 Q 360 498 387 516 M 343 516 Q 360 528 377 516" stroke="#B88746" strokeWidth="1.6" fill="none" />
+    <circle cx="360" cy="516" r="3.2" fill="#B88746" />
 
-    {/* Scattered paw prints */}
-    <g fill="#8B6914" opacity="0.22">
-      <ellipse cx="200" cy="207" rx="4.5" ry="3.5"/>
-      <ellipse cx="192" cy="203" rx="2.2" ry="2.8"/>
-      <ellipse cx="200" cy="201" rx="2.2" ry="2.8"/>
-      <ellipse cx="208" cy="203" rx="2.2" ry="2.8"/>
+    <text x="360" y="596" textAnchor="middle" fontFamily="'Yuji Syuku','Shippori Mincho',serif" fontSize="34" fill="#8B5E34" letterSpacing="9">
+      お問い合わせはこちらから
+    </text>
+    <text x="360" y="640" textAnchor="middle" fontFamily="'Cormorant Garamond',serif" fontSize="22" fontStyle="italic" fill="#9A6A36" letterSpacing="6">
+      &#9993;  Contact Form  &#9993;
+    </text>
+
+    <g filter="url(#ccButtonShadow)">
+      <rect x="184" y="684" width="352" height="62" rx="31" fill="url(#ccButton)" stroke="#3A1A08" strokeWidth="2" />
+      <rect x="196" y="692" width="328" height="23" rx="15" fill="#FFE0A0" opacity="0.18" />
+      <path d="M 210 721 L 510 721" stroke="#2A1005" strokeWidth="1" opacity="0.32" />
+      <text x="360" y="725" textAnchor="middle" fontFamily="'Cinzel','IM Fell English SC',serif" fontSize="23" fontWeight="700" fill="#F5D98A" letterSpacing="7">
+        CONTACT HERE
+      </text>
+      <text x="206" y="725" textAnchor="middle" fontFamily="'Cinzel',serif" fontSize="18" fill="#F5D98A">✧</text>
+      <text x="514" y="725" textAnchor="middle" fontFamily="'Cinzel',serif" fontSize="18" fill="#F5D98A">✧</text>
     </g>
-    <g fill="#8B6914" opacity="0.17">
-      <ellipse cx="225" cy="208" rx="4.5" ry="3.5"/>
-      <ellipse cx="217" cy="204" rx="2.2" ry="2.8"/>
-      <ellipse cx="225" cy="202" rx="2.2" ry="2.8"/>
-      <ellipse cx="233" cy="204" rx="2.2" ry="2.8"/>
+
+    <g transform="translate(270 760)">
+      <path d="M 90 23 C 70 1 22 -10 4 10 C -8 28 24 54 66 41 C 78 37 86 29 90 23 Z" fill="url(#ccRibbon)" stroke="#734015" strokeWidth="1.2" />
+      <path d="M 90 23 C 110 1 158 -10 176 10 C 188 28 156 54 114 41 C 102 37 94 29 90 23 Z" fill="url(#ccRibbon)" stroke="#734015" strokeWidth="1.2" />
+      <path d="M 82 30 C 68 48 52 64 38 82 L 56 82 C 64 64 78 44 92 30 Z" fill="url(#ccBronzeV)" />
+      <path d="M 98 30 C 112 48 128 64 142 82 L 124 82 C 116 64 102 44 88 30 Z" fill="url(#ccBronzeV)" />
+      <ellipse cx="90" cy="26" rx="16" ry="12" fill="#B97831" stroke="#734015" strokeWidth="1.2" />
+      <path d="M 18 12 C 44 0 72 12 89 23 M 162 12 C 136 0 108 12 91 23" fill="none" stroke="#F2D89A" strokeWidth="1" opacity="0.55" />
     </g>
   </svg>
 );
 
 const ContactCard = () => {
-  const cardRef = useRef(null);
+  const wrapRef = useRef(null);
 
-  const handleMouseEnter = () => {
-    if (cardRef.current) {
-      cardRef.current.style.transform = 'translateY(-6px) scale(1.015)';
-    }
-  };
-  const handleMouseLeave = () => {
-    if (cardRef.current) {
-      cardRef.current.style.transform = 'translateY(0) scale(1)';
-    }
+  const lift = (value) => {
+    if (wrapRef.current) wrapRef.current.style.transform = value;
   };
 
   return (
     <section className="mt-14 md:mt-20" id="contact-section">
-      {/* Section header */}
-      <div className="text-center mb-8">
+      <div className="text-center mb-7">
         <p className="font-fell text-[11px] tracking-[0.5em] text-amber-800/70 mb-2">✦ CONTACT ✦</p>
-        <h2 className="font-yuji text-3xl md:text-4xl nouveau-text" style={{letterSpacing:'0.15em'}}>
+        <h2 className="font-yuji text-3xl md:text-4xl nouveau-text" style={{ letterSpacing: "0.15em" }}>
           お 問 合 せ
         </h2>
       </div>
 
-      {/* Card link */}
       <a
         href="https://form.run/@yaseieneko-IHhS4nvQhddS0viY89A1"
         target="_blank"
         rel="noopener noreferrer"
-        style={{textDecoration:'none', display:'block', maxWidth:'700px', margin:'0 auto'}}
+        aria-label="お問い合わせフォームを開く"
+        style={{ display: "block", maxWidth: "680px", margin: "0 auto", textDecoration: "none" }}
       >
         <div
-          ref={cardRef}
-          className="relative oak-frame p-3"
-          style={{transition:'transform 0.4s cubic-bezier(.2,.9,.3,1)', cursor:'pointer'}}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          ref={wrapRef}
+          onMouseEnter={() => lift("translateY(-5px)")}
+          onMouseLeave={() => lift("translateY(0)")}
+          style={{
+            transition: "transform 0.35s cubic-bezier(.2,.9,.3,1)",
+            cursor: "pointer",
+            filter: "drop-shadow(0 16px 24px rgba(68, 35, 8, 0.16))"
+          }}
         >
-          {/* Corner bolts */}
-          <span className="corner-deco" style={{top:'8px',  left:'8px',  width:'24px', height:'24px'}}></span>
-          <span className="corner-deco" style={{top:'8px',  right:'8px', width:'24px', height:'24px'}}></span>
-          <span className="corner-deco" style={{bottom:'8px', left:'8px',  width:'24px', height:'24px'}}></span>
-          <span className="corner-deco" style={{bottom:'8px', right:'8px', width:'24px', height:'24px'}}></span>
-
-          <div className="parchment-bg px-6 py-10 text-center"
-               style={{position:'relative', overflow:'hidden'}}>
-            {/* Art Nouveau corner decorations */}
-            <svg className="absolute top-2 left-2 w-14 h-14" viewBox="0 0 80 80">
-              <use href="#nouveauCorner"/>
-            </svg>
-            <svg className="absolute top-2 right-2 w-14 h-14"
-                 style={{transform:'scaleX(-1)'}} viewBox="0 0 80 80">
-              <use href="#nouveauCorner"/>
-            </svg>
-            <svg className="absolute bottom-2 left-2 w-14 h-14"
-                 style={{transform:'scaleY(-1)'}} viewBox="0 0 80 80">
-              <use href="#nouveauCorner"/>
-            </svg>
-            <svg className="absolute bottom-2 right-2 w-14 h-14"
-                 style={{transform:'scale(-1,-1)'}} viewBox="0 0 80 80">
-              <use href="#nouveauCorner"/>
-            </svg>
-
-            {/* Illustration */}
-            <div className="flex justify-center mb-4">
-              <ContactIllustration />
-            </div>
-
-            {/* Ornamental divider */}
-            <div className="flex justify-center my-4 px-4">
-              <svg viewBox="0 0 400 30" className="w-full max-w-xs h-5">
-                <use href="#dividerSym"/>
-              </svg>
-            </div>
-
-            {/* CTA text */}
-            <p className="font-yuji text-2xl md:text-3xl nouveau-text mb-2"
-               style={{letterSpacing:'0.2em'}}>
-              お問合せはこちらから
-            </p>
-            <p className="font-cormorant italic text-amber-800/70 text-sm mt-1"
-               style={{letterSpacing:'0.15em'}}>
-              ✉ &nbsp;Contact Form&nbsp; ✉
-            </p>
-            <div className="mt-4 font-fell text-[11px] tracking-[0.4em] text-amber-700/75">
-              ── click here ──
-            </div>
-          </div>
+          <ContactCardSVG />
         </div>
       </a>
     </section>
   );
 };
 
-ReactDOM.createRoot(document.getElementById('contact-card-root')).render(
-  React.createElement(React.StrictMode, null,
-    React.createElement(ContactCard, null)
-  )
+ReactDOM.createRoot(document.getElementById("contact-card-root")).render(
+  React.createElement(React.StrictMode, null, React.createElement(ContactCard, null))
 );
