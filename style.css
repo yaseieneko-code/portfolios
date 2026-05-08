@@ -79,6 +79,14 @@
     filter: drop-shadow(0 2px 3px rgba(40,20,8,0.45));
 }
 
+/* ----- Hero name board ----- */
+.hero-name-board {
+    display: block;
+    width: min(100%, 900px);
+    height: auto;
+    filter: drop-shadow(0 18px 28px rgba(54, 30, 12, 0.22));
+}
+
 /* ----- Nouveau gold gradient text ----- */
 .nouveau-text {
     background: linear-gradient(180deg, #f5d98a 0%, #c9a14a 45%, #8b6914 75%, #d9b366 100%);
