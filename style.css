@@ -104,7 +104,7 @@
     }
 
     .hero-name-board {
-        width: 118vw;
+        width: min(100%, 900px);
     }
 }
 
