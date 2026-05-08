@@ -60,6 +60,14 @@
     background: radial-gradient(ellipse at center, rgba(252,244,220,0.95) 0%, rgba(238,222,188,0.85) 100%);
 }
 
+/* ----- Award certificate images ----- */
+.award-image-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 14px 24px rgba(70, 38, 10, 0.18));
+}
+
 /* ----- Author name gradient ----- */
 .author-name-grad {
     font-family: 'Yuji Syuku', 'Shippori Mincho', serif;
