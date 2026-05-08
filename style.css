@@ -179,6 +179,13 @@
     outline: 2px solid rgba(139, 94, 52, 0.72);
 }
 
+/* ----- Works title image ----- */
+.works-title-logo {
+    display: block;
+    width: min(100%, 820px);
+    height: auto;
+}
+
 /* ----- Floating paw animation ----- */
 @keyframes paw-walk {
     0%, 100% { opacity: 0.15; transform: translateY(0); }
