@@ -309,6 +309,54 @@
     }
 }
 
+/* ----- Garden footer ----- */
+.site-footer-garden {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    overflow: hidden;
+}
+
+.site-footer-garden .footer-divider,
+.site-footer-garden .footer-copyright {
+    width: min(100%, 64rem);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-garden-scene {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.footer-garden-scene img {
+    display: block;
+    width: 100%;
+    min-height: 320px;
+    max-height: 560px;
+    object-fit: cover;
+    object-position: center bottom;
+    filter: drop-shadow(0 -12px 24px rgba(54, 30, 12, 0.12));
+}
+
+.footer-copyright {
+    position: relative;
+    z-index: 1;
+    margin-top: 1.25rem;
+    padding: 0 1.25rem 2rem;
+}
+
+@media (max-width: 768px) {
+    .footer-garden-scene img {
+        min-height: 280px;
+        object-position: center bottom;
+    }
+
+    .footer-copyright {
+        letter-spacing: 0.22em;
+    }
+}
+
 /* ----- Floating paw animation ----- */
 @keyframes paw-walk {
     0%, 100% { opacity: 0.15; transform: translateY(0); }
