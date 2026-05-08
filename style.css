@@ -49,9 +49,13 @@
 @media (max-width: 768px) {
     .mansion-side-bg {
         display: block;
-        width: 58vw;
-        opacity: 0.14;
-        background-size: auto 100%;
+        top: 0;
+        bottom: auto;
+        width: 64vw;
+        height: 100dvh;
+        min-height: 100vh;
+        opacity: 0.16;
+        background-size: cover;
     }
 }
 
