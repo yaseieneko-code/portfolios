@@ -180,10 +180,26 @@
 }
 
 /* ----- Works title image ----- */
+.section-title-logo,
 .works-title-logo {
     display: block;
-    width: min(100%, 820px);
     height: auto;
+}
+
+.section-title-logo-awards {
+    width: min(100%, 680px);
+}
+
+.section-title-logo-links {
+    width: min(100%, 640px);
+}
+
+.section-title-logo-contact {
+    width: min(100%, 720px);
+}
+
+.works-title-logo {
+    width: min(100%, 820px);
 }
 
 /* ----- Floating paw animation ----- */

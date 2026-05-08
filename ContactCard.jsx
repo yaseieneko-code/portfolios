@@ -2,11 +2,15 @@
 
 const ContactCard = () => (
   <section className="mt-14 md:mt-20" id="contact-section">
-    <div className="text-center mb-7">
-      <p className="font-fell text-[11px] tracking-[0.5em] text-amber-800/70 mb-2">✦ CONTACT ✦</p>
-      <h2 className="font-yuji text-3xl md:text-4xl nouveau-text" style={{ letterSpacing: "0.15em" }}>
-        お 問 合 せ
-      </h2>
+    <div className="text-center mb-7 md:mb-9">
+      <img
+        src="images/contact-title-logo.png"
+        alt="CONTACT お問い合わせ"
+        width="1452"
+        height="475"
+        loading="lazy"
+        className="section-title-logo section-title-logo-contact mx-auto"
+      />
     </div>
 
     <a
