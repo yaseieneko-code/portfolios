@@ -46,6 +46,15 @@
     }
 }
 
+@media (max-width: 768px) {
+    .mansion-side-bg {
+        display: block;
+        width: 42vw;
+        opacity: 0.04;
+        background-size: 120px auto;
+    }
+}
+
 .parchment-bg {
     background-image:
         radial-gradient(ellipse at 20% 10%, rgba(180,140,80,0.10), transparent 50%),
