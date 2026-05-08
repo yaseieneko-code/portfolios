@@ -283,8 +283,30 @@
     width: min(100%, 720px);
 }
 
+.section-title-logo-author {
+    width: min(100%, 700px);
+    filter: drop-shadow(0 14px 24px rgba(54, 30, 12, 0.20));
+}
+
 .works-title-logo {
     width: min(100%, 820px);
+}
+
+.author-info-book-image {
+    display: block;
+    width: min(100%, 820px);
+    height: auto;
+    filter: drop-shadow(0 16px 28px rgba(54, 30, 12, 0.18));
+}
+
+@media (max-width: 768px) {
+    .section-title-logo-author {
+        width: min(100%, 580px);
+    }
+
+    .author-info-book-image {
+        width: min(100%, 680px);
+    }
 }
 
 /* ----- Floating paw animation ----- */
