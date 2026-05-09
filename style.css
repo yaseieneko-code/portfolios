@@ -138,7 +138,7 @@
 
 .hero-name-board {
     display: block;
-    width: min(108vw, 1080px);
+    width: min(100%, 1120px);
     max-width: none;
     height: auto;
     margin: 0 auto;
@@ -152,7 +152,7 @@
     }
 
     .hero-name-board {
-        width: min(100%, 900px);
+        width: 100%;
     }
 }
 
