@@ -263,8 +263,16 @@
             <img src="images/hero-name-board.png" alt="野生のイエネコ 小説家・漫画原作者" width="876" height="676" class="hero-name-board" fetchpriority="high">
         </header>
 
-        <!-- ============== CONTACT CARD (React) ============== -->
-        <div id="contact-card-root"></div>
+        <!-- ============== CONTACT CARD ============== -->
+        <section class="mt-14 md:mt-20" id="contact-section">
+            <div class="text-center mb-7 md:mb-9">
+                <img src="images/contact-title-logo.png" alt="CONTACT お問い合わせ" width="1452" height="475" loading="lazy" class="section-title-logo section-title-logo-contact mx-auto">
+            </div>
+
+            <a href="https://form.run/@yaseieneko-IHhS4nvQhddS0viY89A1" target="_blank" rel="noopener noreferrer" aria-label="お問い合わせフォームを開く" class="contact-image-link">
+                <img src="images/contact-card.png" alt="お問い合わせはこちらから Contact Form" width="1086" height="1448" loading="lazy" class="contact-card-image">
+            </a>
+        </section>
 
         <!-- ============== AUTHOR INFO ============== -->
         <section class="mt-14 md:mt-20" aria-labelledby="author-info-heading">
@@ -393,12 +401,6 @@
             <p class="font-fell text-xs tracking-[0.4em] text-amber-800/70 footer-copyright">© YASEI NO IENEKO &nbsp;·&nbsp; ALL RIGHTS RESERVED</p>
         </footer>
     </main>
-
-    <!-- React 18 + Babel standalone for ContactCard component -->
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script type="text/babel" data-presets="react" src="ContactCard.jsx"></script>
 
     <script src="script.js"></script>
 </body>
